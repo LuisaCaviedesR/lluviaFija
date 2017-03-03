@@ -14,3 +14,16 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+/*URL,Nombre de la funcion del controlador*/
+Route::get('lluviafija/crearAfiliado','AfiliadoController@crearAfiliado');
+
+Route::get('lluviafija/editarAfiliado','AfiliadoController@editarAfiliado');
+
+Route::get('lluviafija/listarAfiliados','AfiliadoController@listarAfiliados');
+
+Route::get('lluviafija/crearCabana','CabanasController@crearCabana');
+
+Route::get('lluviafija/editarCabana','CabanasController@editarCabana');
+
+Route::get('lluviafija/listarCabanas','CabanasController@listarCabanas');
