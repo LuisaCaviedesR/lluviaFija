@@ -41,7 +41,7 @@ body {
 
 .navbar-top-links li a {
     padding: 15px;
-    min-height: 50px;
+    min-height: 65px;
 }
 
 .navbar-top-links .dropdown-menu li {
@@ -88,6 +88,7 @@ body {
 
 .sidebar  {
    background-color: #323543;  
+    margin-top: 65px;
 }
  .sidebar a{
 	color:#8A8A8A;
@@ -146,7 +147,7 @@ body {
         z-index: 1;
         position: absolute;
         width: 250px;
-        margin-top: 51px;
+        margin-top: 65px;
     }
 
     .navbar-top-links .dropdown-messages,
@@ -160,6 +161,13 @@ body {
     color: inherit;
     background-color: transparent;
     transition: all .5s;
+}
+
+.btn-primary {
+    background: #00BBDD;
+    color: #FFFFFF;
+    box-shadow: none !important;
+    border: none !important;
 }
 
 .btn-primary.btn-outline {
@@ -248,7 +256,8 @@ table.dataTable thead .sorting_asc,
 table.dataTable thead .sorting_desc,
 table.dataTable thead .sorting_asc_disabled,
 table.dataTable thead .sorting_desc_disabled {
-    background: 0 0;
+    background-color:#303340;
+	color:#CDCDCD;
 }
 
 table.dataTable thead .sorting_asc:after {
@@ -397,4 +406,21 @@ a {
 
 #logo{
     color: #00BBDD;
+    font-size: 40px !important;   
+}
+
+.pagination>li>a,.pagination>li>span{
+       
+    color: #00BBDD;
+    
+}
+
+.pagination>.active>a,.pagination>.active>a:focus,.pagination>.active>a:hover,.pagination>.active>span,.pagination>.active>span:focus,.pagination>.active>span:hover{
+    
+    background-color:#00BBDD;
+    border-color:#00BBDD;
+}
+.pagination>li>a:focus,.pagination>li>a:hover,.pagination>li>span:focus,.pagination>li>span:hover{
+    color:#303340;
+   
 }

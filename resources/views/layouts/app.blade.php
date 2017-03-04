@@ -6,7 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Lluvia Fija</title>
         {!! Html::style('assets/css/bootstrap.css') !!}  
-        {!! Html::style('components/metisMenu/dist/metisMenu.min.css') !!}  
+        {!! Html::style('components/metisMenu/dist/metisMenu.min.css') !!}
+        {!! Html::style('components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css') !!}
         {!! Html::style('css/layout.css') !!} 
         {!! Html::style('fonts/font-awesome/css/font-awesome.min.css') !!}    
     </head>    
@@ -22,7 +23,10 @@
         {!! Html::script('https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js') !!}       
         {!! Html::script('assets/js/bootstrap.min.js') !!}  
         {!! Html::script('components/metisMenu/dist/metisMenu.min.js') !!}  
-        {!! Html::script('js/layout.js') !!}      
+        {!! Html::script('components/datatables/media/js/jquery.dataTables.min.js') !!} 
+        {!! Html::script('components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js') !!} 
+        {!! Html::script('js/layout.js') !!}   
+        {!! Html::script('js/funciones.js') !!}            
     </body>
 </html>
 

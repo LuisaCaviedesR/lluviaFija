@@ -16,14 +16,17 @@ Route::get('/', function () {
 });
 
 /*URL,Nombre de la funcion del controlador*/
-Route::get('lluviafija/crearAfiliado','AfiliadoController@crearAfiliado');
+Route::post('lluviafija/crearAfiliado','AfiliadoController@crearAfiliado');
 
-Route::get('lluviafija/editarAfiliado','AfiliadoController@editarAfiliado');
+Route::post('lluviafija/editarAfiliado','AfiliadoController@editarAfiliado');
 
 Route::get('lluviafija/listarAfiliados','AfiliadoController@listarAfiliados');
 
-Route::get('lluviafija/crearCabana','CabanasController@crearCabana');
+Route::post('lluviafija/crearCabana','CabanasController@crearCabana');
 
-Route::get('lluviafija/editarCabana','CabanasController@editarCabana');
+Route::post('lluviafija/editarCabana','CabanasController@editarCabana');
 
 Route::get('lluviafija/listarCabanas','CabanasController@listarCabanas');
+
+Route::get('lluviafija/listarAlquiler','AlquilerController@index');
+
