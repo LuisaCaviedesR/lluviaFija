@@ -7,11 +7,11 @@ use Illuminate\Http\Request;
 class AfiliadoController extends Controller
 {
     public function crearAfiliado(){
-        return view('lluviafija\crearAfiliado');/*Nombre de la vista*/
+        return view('afiliados\crearAfiliado');/*Nombre de la vista*/
     }
 
     public function editarAfiliado(){
-        return view('lluviafija\crearAfiliado');/*Nombre de la vista*/
+        return view('afiliados\crearAfiliado');/*Nombre de la vista*/
     }
 
     public function eliminarAfiliado(){
@@ -20,6 +20,6 @@ class AfiliadoController extends Controller
     }
 
     public function listarAfiliados(){
-        return view('lluviafija\listarAfiliados');/*Nombre de la vista*/
+        return view('afiliados\listarAfiliados');/*Nombre de la vista*/
     }
 }
