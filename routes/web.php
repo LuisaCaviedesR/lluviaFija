@@ -22,7 +22,7 @@ Route::post('lluviafija/editarAfiliado','AfiliadoController@editarAfiliado');
 
 Route::get('lluviafija/listarAfiliados','AfiliadoController@listarAfiliados');
 
-Route::post('lluviafija/crearCabana','CabanasController@crearCabana');
+Route::get('lluviafija/crearCabana','CabanasController@crearCabana');
 
 Route::post('lluviafija/editarCabana','CabanasController@editarCabana');
 
