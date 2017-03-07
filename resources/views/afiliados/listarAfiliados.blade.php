@@ -9,7 +9,7 @@
                         <div class="col-sm-9">Afiliados</div>
                         <div class="col-sm-3">
                             <button type="button" class="btn btn-primary" onclick="location.href='{!! url('lluviafija/crearAfiliado') !!}'">
-                                Registrar Afiliado<i class="fa fa-plus-circle"></i>
+                                Registrar Afiliado <i class="fa fa-plus-circle"></i>
                             </button>
                         </div>
                     </div>

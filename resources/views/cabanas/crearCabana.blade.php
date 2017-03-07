@@ -29,7 +29,7 @@
                                         </div>    
                                     </div>
                                     <button type="submit" class="btn btn-primary">Guardar</button>
-                                    <a class="btn btn-default" href="" role="button">Cancelar</a>
+                                    <a class="btn btn-default" href="{!! url('lluviafija/listarCabanas') !!}" role="button">Cancelar</a>
                                 </form>
                             </div>
                         </div>
