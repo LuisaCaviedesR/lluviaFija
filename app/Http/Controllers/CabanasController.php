@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class CabanasController extends Controller
 {
      public function crearCabana(){
-        return view('cabanas\crearCabana');/*Nombre de la vista*/
+        return view('cabanas/crearCabana');/*Nombre de la vista*/
     }
 
     public function editarAfiliado(){
