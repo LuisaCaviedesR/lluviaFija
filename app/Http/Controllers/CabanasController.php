@@ -10,7 +10,7 @@ class CabanasController extends Controller
         return view('cabanas/crearCabana');/*Nombre de la vista*/
     }
 
-    public function editarAfiliado(){
+    public function editarCabana(){
         return view('cabanas/crearCabana');/*Nombre de la vista*/
     }
 
