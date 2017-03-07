@@ -1,5 +1,10 @@
 @extends ('layouts.app')
 @section('content')
+
+<div class="col-xs-3">
+</div>
+
+<div class="col-xs-6">
 <div class="modal-content">
           <div class="modal-header">
               <center><h4 class="modal-title">Panel de Control</h4></center>
@@ -21,13 +26,18 @@
                               </div>
                               <div class="checkbox">
                                   <label>
-                                      <input type="checkbox" name="remember" id="remember"> Recordarme
-                                  </label>
+                                <input type="checkbox" name="remember" id="remember"> Recordarme
+                                </label>
                               </div>
                               <button type="submit" class="btn btn-success btn-block">Log In</button>
                           </form>
                       </div>
                   </div>
-
+            </div>
+      </div>
+</div>
+</div>
+<div class="col-xs-3">
+</div>
                             
 @stop
