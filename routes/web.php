@@ -18,15 +18,17 @@ Route::get('/', function () {
 /*URL,Nombre de la funcion del controlador*/
 Route::get('lluviafija/crearAfiliado','AfiliadoController@crearAfiliado');
 
-Route::post('lluviafija/editarAfiliado','AfiliadoController@editarAfiliado');
+Route::get('lluviafija/editarAfiliado','AfiliadoController@editarAfiliado');
 
 Route::get('lluviafija/listarAfiliados','AfiliadoController@listarAfiliados');
 
 Route::get('lluviafija/crearCabana','CabanasController@crearCabana');
 
-Route::post('lluviafija/editarCabana','CabanasController@editarCabana');
+Route::get('lluviafija/editarCabana','CabanasController@editarCabana');
 
 Route::get('lluviafija/listarCabanas','CabanasController@listarCabanas');
 
 Route::get('lluviafija/listarAlquiler','AlquilerController@index');
+
+Route::get('lluviafija/registrarAlquiler','AlquilerController@registrarAlquiler');
 

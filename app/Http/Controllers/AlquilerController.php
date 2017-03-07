@@ -11,4 +11,10 @@ class AlquilerController extends Controller
         return view('alquiler/index');
 
     }
+    
+    public function registrarAlquiler(){
+
+        return view('alquiler/form');
+
+    }
 }

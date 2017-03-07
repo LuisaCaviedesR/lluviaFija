@@ -1,50 +1,45 @@
 @extends ('layouts.app')
 @section('content')
-
-  <div class="container">
-	<div class="page-header">
-       <h1>Listar Afiliados</h1>
+<p></p>
+        <div class="row">
+   	        <div class="col-lg-12 col-md-12 col-sm-12">
+   		       <div class="panel panel-default">
+   			      <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-sm-9">Afiliados</div>
+                        <div class="col-sm-3">
+                            <button type="button" class="btn btn-primary" onclick="location.href='{!! url('lluviafija/crearAfiliado') !!}'">
+                                Registrar Afiliado<i class="fa fa-plus-circle"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+           	    <div class="panel-body">
+                <div class="table-responsive col-lgl-12">
+           		  <table class="table table-striped table-bordered table-hover" id="afiliado">
+	 		        <thead>
+				        <tr>
+				            <th width="16%">Id</th>
+				            <th width="16%">Nombres</th>
+				            <th width="18%">Apellidos</th>
+                            <th width="16%">Email</th>
+				            <th width="16%">Celular</th>
+                            <th width="16%">Acciones</th>
+				        </tr>
+	 		        </thead>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><input type="radio"></td>
+                    </tr>
+				    </table>
+                    </div>
+			  </div>
+		  </div>
+	   </div>
     </div>
-	
-<table class="table table-hover" >
-             <tr>
-                <td colspan="6">A continuación encotrara los afiliados de nuestro parque</td>
-            </tr>
-            <tr>
-                <th>id</th>
-                <th>Nombre</th>
-                <th>Apellido</th>
-                <th>Email</th>
-                <th>Celular</th>
-                <th>Acciones</th>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>John</td>
-                <td>Boo</td>
-                <td>johnny81@gmail.com</td>
-                <td>xxx-xxxxxxx</td>
-                <td><input type="radio"></td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Mary</td>
-                <td>Brown</td>
-                <td>missmary@gmail.com</td>
-                <td>xxx-xxxxxxx</td>
-                <td><input type="radio"></td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>James</td>
-                <td>Mooray</td>
-                <td>jijames@gmail.com</td>
-                <td>xxx-xxxxxxx</td>
-                <td><input type="radio"></td>
-            </tr>
-        </table>
 
-  </div>
 @stop
-
-
