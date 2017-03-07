@@ -8,7 +8,7 @@
                     <div class="row">
                         <div class="col-sm-9">Cabañas</div>
                         <div class="col-sm-3">
-                            <button type="button" class="btn btn-primary">
+                            <button type="button" class="btn btn-primary" onclick="location.href='{!! url('lluviafija/crearCabana') !!}'">
                                 Registrar Cabaña <i class="fa fa-plus-circle"></i>
                             </button>
                         </div>
