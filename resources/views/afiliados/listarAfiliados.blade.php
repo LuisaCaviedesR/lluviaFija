@@ -33,7 +33,9 @@
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td><input type="radio"></td>
+                        <td><a href=""><i class="fa fa-pencil fa-fw" title="Editar"></i></a>
+                            <a href="#" ><i class="fa fa-trash-o  fa-fw" title="Borrar"></i></a> 
+                        </td>
                     </tr>
 				    </table>
                     </div>
