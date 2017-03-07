@@ -16,7 +16,7 @@ Route::get('/', function () {
 });
 
 /*URL,Nombre de la funcion del controlador*/
-Route::post('lluviafija/crearAfiliado','AfiliadoController@crearAfiliado');
+Route::get('lluviafija/crearAfiliado','AfiliadoController@crearAfiliado');
 
 Route::post('lluviafija/editarAfiliado','AfiliadoController@editarAfiliado');
 
