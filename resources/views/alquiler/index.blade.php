@@ -8,7 +8,7 @@
                     <div class="row">  
                         <div class="col-sm-9">Alquiler</div>	
                         <div class="col-sm-3">
-                            <button type="button" class="btn btn-primary">
+                            <button type="button" class="btn btn-primary" onclick="location.href='{!! url('lluviafija/registrarAlquiler') !!}'">
                                 Registrar Alquiler <i class="fa fa-plus-circle"></i>
                             </button>
                         </div>
