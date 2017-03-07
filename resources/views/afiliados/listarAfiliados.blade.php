@@ -21,7 +21,7 @@
 				        <tr>
 				            <th width="16%">Id</th>
 				            <th width="16%">Nombres</th>
-				            <th width="18%">Apellidos</th>
+				            <th width="16%">Apellidos</th>
                             <th width="16%">Email</th>
 				            <th width="16%">Celular</th>
                             <th width="16%">Acciones</th>
