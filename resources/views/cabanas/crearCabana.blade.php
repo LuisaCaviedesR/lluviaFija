@@ -20,7 +20,14 @@
                                     <div class="form-group">
                                         <label>Capacidad</label>
                                          <input type="text" class="form-control" id="Capacidad" name="Capacidad" placeholder="Capacidad máxima de la cabaña" value="">
-                                    </div>                     
+                                    </div>  
+                                    <div class="form-group">
+                                        <label>Precio</label>
+                                        <div class="input-group">
+                                            <div class="input-group-addon">$</div>
+                                            <input type="text" class="form-control" id="Precio" name="Precio" placeholder="Precio en pesos" value="">
+                                        </div>    
+                                    </div>
                                     <button type="submit" class="btn btn-primary">Guardar</button>
                                     <a class="btn btn-default" href="" role="button">Cancelar</a>
                                 </form>
