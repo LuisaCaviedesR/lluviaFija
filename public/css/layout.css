@@ -438,3 +438,7 @@ a {
 .submit-button{
     margin-top: 15px !important;
 }
+.select2-container .select2-choice {
+
+  line-height: 15px
+}

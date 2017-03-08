@@ -11,11 +11,19 @@
                                 <form role="form" id="" action="" method="post">          	      
                                     <div class="form-group">
                                         <label>Afiliado</label>
-                                        <input type="text" class="form-control" id="" name="" placeholder="" value="">
+                                        <select class="form-control search-select">
+                                            <option></option>
+                                            <option value="AL">Pepito perez</option>  
+                                            <option value="WY">Filomena Roman</option>
+                                        </select>
                                     </div>
                                     <div class="form-group">
                                         <label>Cabaña</label>
-                                        <input type="text" class="form-control" id="" name="" placeholder="" value="">                
+                                        <select class="form-control search-select">
+                                            <option></option>
+                                            <option value="AL">Pepito perez</option>  
+                                            <option value="WY">Filomena Roman</option>
+                                        </select>           
                                     </div>
                                      <div class="form-group">	
        		                           <label>Fechas</label>
