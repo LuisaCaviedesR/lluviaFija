@@ -34,3 +34,4 @@ Route::get('lluviafija/registrarAlquiler','AlquilerController@registrarAlquiler'
 
 Route::get('lluviafija/login','loginController@login');
 
+Route::get('lluviafija/crearUsuario','UsuariosController@crearUsuario');
