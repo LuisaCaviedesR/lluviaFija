@@ -429,3 +429,13 @@ a {
     font-size: 35px;
     color: #36A0FF;
 }
+
+.fix-padding-left{
+    padding-left: 0 !important;
+}
+.fix-padding-right{
+    padding-right: 0 !important;
+}
+.submit-button{
+    margin-top: 15px !important;
+}
