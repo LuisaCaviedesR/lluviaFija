@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
             <div class="panel panel-default">
-                <div class="panel-heading">Crear Usuario</div>
+                <div class="panel-heading">Iniciar Sesión</div>
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-lg-12">
@@ -27,7 +27,12 @@
                                                     <input type="checkbox" name="remember" id="remember">Recordarme
                                                 </label>
                                             </div>
-                                            <button type="button" class="btn btn-primary" onclick="location.href='{!! url('lluviafija/listarAlquiler') !!}'">Log In</button>
+                                            <div>
+                                                <button type="button" class="btn btn-primary" onclick="location.href='{!! url('lluviafija/listarAlquiler') !!}'">Inicio sesión</button>
+                                            </div>
+                                            <div>
+                                                <a href="#">¿Olvidó su contraseña?</a>
+                                            </div>
                                         </form>
                                     </div>
                                 </div>

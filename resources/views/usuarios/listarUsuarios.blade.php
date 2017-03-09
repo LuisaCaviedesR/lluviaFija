@@ -19,20 +19,14 @@
            		  <table class="table table-striped table-bordered table-hover" id="usuario1">
 	 		        <thead>
 				        <tr>
-				            <th width="16%">id</th>
-				            <th width="16%">Rol</th>
-				            <th width="18%">Nombre</th>
-                            <th width="16%">Apellidos</th>
-				            <th width="16%">Email</th>
-                            <th width="16%">Fecha Creación</th>
-                            <th width="16%">Fecha Actualización</th>
-                            <th width="16%">Acciones</th>
+				            <th width="19%">Rol</th>
+				            <th width="20%">Nombre</th>
+                            <th width="20%">Apellidos</th>
+				            <th width="27%">Email</th>
+                            <th width="12%">Acciones</th>
 				        </tr>
 	 		        </thead>
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
                         <td></td>
                         <td></td>
                         <td></td>
