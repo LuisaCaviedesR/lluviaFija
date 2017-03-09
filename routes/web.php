@@ -11,11 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 /*URL,Nombre de la funcion del controlador*/
+
+Route::get('/','loginController@login');
+
 Route::get('lluviafija/crearAfiliado','AfiliadoController@crearAfiliado');
 
 Route::get('lluviafija/editarAfiliado','AfiliadoController@editarAfiliado');
@@ -31,8 +30,6 @@ Route::get('lluviafija/listarCabanas','CabanasController@listarCabanas');
 Route::get('lluviafija/listarAlquiler','AlquilerController@index');
 
 Route::get('lluviafija/registrarAlquiler','AlquilerController@registrarAlquiler');
-
-Route::get('lluviafija/login','loginController@login');
 
 Route::get('lluviafija/crearUsuario','UsuariosController@crearUsuario');
 

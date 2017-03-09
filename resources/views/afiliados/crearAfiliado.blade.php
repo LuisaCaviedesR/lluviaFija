@@ -68,7 +68,7 @@
                                             <input type="text" class="form-control" id="CelularAfiliado" name="CelularAfiliado" placeholder="Celular" value="">
                                         </div>
                                     </div>
-                                    <button type="submit" class="btn btn-primary">Guardar</button>
+                                    <button type="button" class="btn btn-primary" onclick="location.href='{!! url('lluviafija/listarAfiliados') !!}'">Guardar</button>
                                     <a class="btn btn-default" href="{!! url('lluviafija/listarAfiliados') !!}" role="button">Cancelar</a>
                                 </form>
                             </div>

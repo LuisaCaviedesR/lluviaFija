@@ -28,7 +28,7 @@
                                             <input type="text" class="form-control" id="Precio" name="Precio" placeholder="Precio en pesos" value="">
                                         </div>    
                                     </div>
-                                    <button type="submit" class="btn btn-primary">Guardar</button>
+                                    <button type="button" class="btn btn-primary" onclick="location.href='{!! url('lluviafija/listarCabanas') !!}'">Guardar</button>
                                     <a class="btn btn-default" href="{!! url('lluviafija/listarCabanas') !!}" role="button">Cancelar</a>
                                 </form>
                             </div>

@@ -54,7 +54,7 @@
                                            </div>         
                                       </div>  
                                    </div> 
-                                    <button class="submit-button btn btn-primary">Guardar</button>
+                                    <button type= "button" class="submit-button btn btn-primary" onclick="location.href='{!! url('lluviafija/listarAlquiler') !!}'">Guardar</button>
                                     <a class=" submit-button btn btn-default" href="{!! url('lluviafija/listarAlquiler') !!}" role="button">Cancelar</a>
                                   </form>
                             </div>

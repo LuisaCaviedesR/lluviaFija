@@ -16,7 +16,7 @@
             <ul class="dropdown-menu dropdown-user">
                 <li><a href="#"><i class="fa fa-cog fa-fw"></i> Ajustes Usuario</a></li>                      
                 <li class="divider"></li>
-                <li><a href="#"><i class="fa fa-sign-out fa-fw"></i>Cerrar Sesión</a></li>
+                <li><a href="{!! url('/') !!}"><i class="fa fa-sign-out fa-fw"></i>Cerrar Sesión</a></li>
             </ul>                   
         </li>              
     </ul>
