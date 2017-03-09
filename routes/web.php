@@ -37,3 +37,5 @@ Route::get('lluviafija/login','loginController@login');
 Route::get('lluviafija/crearUsuario','UsuariosController@crearUsuario');
 
 Route::get('lluviafija/listarUsuarios','UsuariosController@listarUsuarios');
+
+Route::get('lluviafija/perfilUsuario','UsuariosController@perfilUsuario');
