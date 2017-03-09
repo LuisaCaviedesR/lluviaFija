@@ -24,14 +24,12 @@
 				            <th width="18%">Nombre</th>
                             <th width="16%">Apellidos</th>
 				            <th width="16%">Email</th>
-                            <th width="16%">Password</th>
                             <th width="16%">Fecha Creación</th>
                             <th width="16%">Fecha Actualización</th>
                             <th width="16%">Acciones</th>
 				        </tr>
 	 		        </thead>
                     <tr>
-                        <td></td>
                         <td></td>
                         <td></td>
                         <td></td>
