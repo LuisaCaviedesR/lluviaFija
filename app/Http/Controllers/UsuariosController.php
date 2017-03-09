@@ -13,5 +13,9 @@ class UsuariosController extends Controller
          public function listarUsuarios(){
             return view('usuarios/listarUsuarios');/*Nombre de la vista*/
     }
+    
+    public function perfilUsuario(){
+            return view('usuarios/perfilUsuario');/*Nombre de la vista*/
+    }
 
 }

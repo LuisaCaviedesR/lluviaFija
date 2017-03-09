@@ -14,7 +14,7 @@
                 <i class="fa fa-user fa"></i> Bienvenido, Pepito Perez <i class="fa fa-caret-down"></i>
             </a>
             <ul class="dropdown-menu dropdown-user">
-                <li><a href="#"><i class="fa fa-cog fa-fw"></i> Ajustes Usuario</a></li>                      
+                <li><a href="{!! url('lluviafija/perfilUsuario') !!}"><i class="fa fa-cog fa-fw"></i> Ajustes Usuario</a></li>                      
                 <li class="divider"></li>
                 <li><a href="{!! url('/') !!}"><i class="fa fa-sign-out fa-fw"></i>Cerrar Sesión</a></li>
             </ul>                   
