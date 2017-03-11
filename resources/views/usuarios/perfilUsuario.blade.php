@@ -45,7 +45,7 @@
                                             <input type="password" class="form-control" id="" name="" placeholder="Password" value="">
                                         </div>
                                     </div>
-                                    <button type="submit" class="btn btn-primary">Guardar</button>
+                                    <button type="button" class="btn btn-primary" onclick="location.href='{!! url('lluviafija/listarAfiliados') !!}'">Guardar</button>
                                     <a class="btn btn-default" href="{!! url('lluviafija/listarAfiliados') !!}" role="button">Cancelar</a>
                                 </form>
                             </div>
