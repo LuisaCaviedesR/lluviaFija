@@ -27,9 +27,9 @@ Route::get('lluviafija/editarCabana','CabanasController@editarCabana');
 
 Route::get('lluviafija/listarCabanas','CabanasController@listarCabanas');
 
-Route::get('lluviafija/listarAlquiler','AlquilerController@index');
+Route::get('lluviafija/listarAlquiler','RentalController@index');
 
-Route::get('lluviafija/registrarAlquiler','AlquilerController@registrarAlquiler');
+Route::get('lluviafija/registrarAlquiler','RentalController@create');
 
 Route::get('lluviafija/crearUsuario','UsuariosController@crearUsuario');
 
