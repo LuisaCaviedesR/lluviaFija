@@ -20,24 +20,25 @@
 	 		        <thead>
 				        <tr>
 				            <th width="16%"># Cabaña</th>
-				            <th width="16%">Capacidad</th>
+				            <th width="16%">#Personas</th>
 				            <th width="16%">Afiliado</th>
                             <th width="16%">Celular</th>
 				            <th width="17%">Fecha Ingeso</th>
                             <th width="17%">Fecha Retiro</th>
                           
 				        </tr>
-	 		        </thead>	 					
-                    <tr>
-                        
+	 		        </thead>
+                    @foreach($list as $rental)  
+                    <tr>                      
+                        <td></td>
+                        <td>{{ $rental->quantity }}</td>
                         <td></td>
                         <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>{{ $rental->datein }}</td>
+                        <td>{{ $rental->dateout }}</td>
                       
-                    </tr>	 											
+                    </tr>
+                    @endforeach  
 				    </table>
                     </div>
 			  </div>
