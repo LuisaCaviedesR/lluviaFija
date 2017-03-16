@@ -25,7 +25,7 @@
             <ul class="nav" id="side-menu">                       
                 <li><a href="{!! url('lluviafija/listarAfiliados') !!}"><i class="fa  fa-group fa-fw"></i> Afiliados</a></li>
                 <li><a href="{!! url('lluviafija/listarCabanas') !!}"><i class="fa  fa-home fa-fw"></i> Cabañas</a></li>
-                <li><a href="{!! url('lluviafija/listarAlquiler') !!}"><i class="fa  fa-credit-card fa-fw"></i> Alquiler</a></li>
+                <li><a href="{!! url('rentals') !!}"><i class="fa  fa-credit-card fa-fw"></i> Alquiler</a></li>
                 <li><a href="{!! url('lluviafija/listarUsuarios') !!}"><i class="fa fa-user fa-fw"></i> Usuarios</a></li>                 
             </ul>
         </div>                

@@ -28,7 +28,7 @@
                                                 </label>
                                             </div>
                                             <div>
-                                                <button type="button" class="btn btn-primary" onclick="location.href='{!! url('lluviafija/listarAlquiler') !!}'">Inicio sesión</button>
+                                                <button type="button" class="btn btn-primary" onclick="location.href='{!! url('rentals') !!}'">Inicio sesión</button>
                                             </div>
                                             <div>
                                                 <a href="#">¿Olvidó su contraseña?</a>
