@@ -22,6 +22,7 @@ class CreateRentalsTable extends Migration
             $table->date('datein');
             $table->date('dateout');
             $table->timestamps();
+        });
     }
 
     /**

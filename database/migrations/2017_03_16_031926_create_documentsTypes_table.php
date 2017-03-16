@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCabinsTable extends Migration
+class CreateDocumentsTypesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,9 @@ class CreateCabinsTable extends Migration
      */
     public function up()
     {
-        Schema::create('cabins', function (Blueprint $table) {
+        Schema::create('documentsTypes', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('cabin_id')->unique();
-            $table->string('description');
-            $table->integer('capacity');
-            $table->float('price',11,2)->default(0.0);
-            $table->boolean('available');
+            $table->string('name');
             $table->timestamps();
         });
     }
@@ -31,6 +27,6 @@ class CreateCabinsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cabins');
+        Schema::dropIfExists('documentsTypes');
     }
 }
