@@ -15,7 +15,7 @@ class CreateCabinsTable extends Migration
     {
         Schema::create('cabins', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('cabin_id')->unique();
+            $table->integer('cabin_number')->unique();
             $table->string('description');
             $table->integer('capacity');
             $table->float('price',11,2)->default(0.0);
