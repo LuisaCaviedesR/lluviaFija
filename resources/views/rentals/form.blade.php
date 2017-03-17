@@ -9,21 +9,13 @@
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-sm-6">
                                 {!! Form::open(['route' => 'rentals.store']) !!}
-                                <div class="form-group">
-                                        <label>Afiliado</label>
-                                        <select class="form-control search-select">
-                                            <option></option>
-                                            <option value="AL">Pepito perez</option>  
-                                            <option value="WY">Filomena Roman</option>
-                                        </select>
+                                    <div class="form-group">
+                                         {!! Form::label('affiliate_id', 'Afiliados', ['class' => 'control-label']) !!}
+                                        {{ Form::select('affiliate_id', $listAffiliates, null, array('class' => 'form-control search-select')) }}                                        
                                     </div>
                                     <div class="form-group">
-                                        <label>Cabaña</label>
-                                        <select class="form-control search-select">
-                                            <option></option>
-                                            <option value="AL">Pepito perez</option>  
-                                            <option value="WY">Filomena Roman</option>
-                                        </select>           
+                                        {!! Form::label('cabin_id', 'Cabaña', ['class' => 'control-label']) !!}
+                                        {{ Form::select('cabin_id', $listCabins, null, array('class' => 'form-control search-select')) }}          
                                     </div>
                                      <div class="form-group">	
        		                           <label>Fechas</label>
