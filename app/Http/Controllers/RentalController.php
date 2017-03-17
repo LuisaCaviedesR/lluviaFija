@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Rental;
+use App\affiliate;
+use App\Cabin;
 use Session;
 
 class RentalController extends Controller
@@ -15,8 +17,9 @@ class RentalController extends Controller
     }
     
     public function create(){
-
-        return view('rentals/form');
+        $affiliates = affiliate::all();
+        $cabins = Cabin::all();
+        return view('rentals.form',['listAffiliates' => $affiliates,'listCabins' => $cabins]);
 
     }
     
