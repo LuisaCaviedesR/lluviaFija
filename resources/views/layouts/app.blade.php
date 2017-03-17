@@ -18,6 +18,12 @@
         <div id="wrapper">
              @include('partials.header')
               <div id="page-wrapper">
+                  <!-- Espacio para los mensajes flash enviados entre solicitudes -->
+                    @if(Session::has('flash_message'))
+                        <article class="alert alert-success">
+                            {{ Session::get('flash_message') }}
+                        </article>
+                    @endif
                   <div class="container-fluid">@yield('content')</div>
             </div>      
         </div>        
