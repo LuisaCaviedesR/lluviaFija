@@ -15,6 +15,8 @@ class CreateRentalsTable extends Migration
     {
         Schema::create('rentals', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('cabin_id')->unsigned();
+            $table->integer('affiliate_id')->unsigned();
             $table->integer('days');
             $table->integer('nights');
             $table->float('price', 11, 2)->default(0.0);
@@ -22,6 +24,12 @@ class CreateRentalsTable extends Migration
             $table->date('datein');
             $table->date('dateout');
             $table->timestamps();
+            $table->foreign('cabin_id')->references('id')->on('cabins')
+                   ->onUpdate('cascade')
+                   ->onDelete('cascade');
+            $table->foreign('affiliate_id')->references('id')->on('affiliates')
+                   ->onUpdate('cascade')
+                   ->onDelete('cascade');
         });
     }
 

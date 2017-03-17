@@ -8,8 +8,8 @@
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-sm-6">
-                                <form role="form" id="" action="" method="post">          	      
-                                    <div class="form-group">
+                                {!! Form::open(['route' => 'rentals.store']) !!}
+                                <div class="form-group">
                                         <label>Afiliado</label>
                                         <select class="form-control search-select">
                                             <option></option>
@@ -28,35 +28,34 @@
                                      <div class="form-group">	
        		                           <label>Fechas</label>
                                          <div class="input-daterange input-group" id="datepicker">
-                                            <input type="text" class="input-sm form-control" name="start" />
+                                            {!! Form::text('datein', null, ['class' => 'input-sm form-control']) !!} 
                                             <span class="input-group-addon">a</span>
-                                            <input type="text" class="input-sm form-control" name="end" />
+                                            {!! Form::text('dateout', null, ['class' => 'input-sm form-control']) !!} 
                                         </div>
        		                       </div>                                  
                                     <div class="form-group">
                                        <div class="col-sm-3 fix-padding-left">
-                                            <label>#Personas</label>
-                                            <input type="text" class="form-control" id="" name="" placeholder="" value="">                
-                                       </div>
+                                        {!! Form::label('quantity', '#Personas', ['class' => 'control-label']) !!}
+                                        {!! Form::text('quantity', null, ['class' => 'form-control']) !!}
+                                        </div>
                                        <div class="col-sm-2"> 
-                                            <label>Días</label>
-                                            <input type="text" class="form-control" id="" name="" placeholder="" value="">                
-                                       </div> 
+                                        {!! Form::label('days', 'Dias', ['class' => 'control-label']) !!}
+                                        {!! Form::text('days', null, ['class' => 'form-control']) !!}
+                                        </div> 
                                        <div class="col-sm-2"> 
-                                            <label>Noches</label>
-                                            <input type="text" class="form-control" id="" name="" placeholder="" value="">                
-                                       </div>      
+                                        {!! Form::label('nights', 'Noches', ['class' => 'control-label']) !!}
+                                        {!! Form::text('nights', null, ['class' => 'form-control']) !!}                       </div>      
                                       <div class="col-sm-5 fix-padding-right"> 
-                                            <label>Valor</label>
+                                           {!! Form::label('price', '#Valor', ['class' => 'control-label']) !!}
                                            <div class="input-group">
                                                 <div class="input-group-addon">$</div>
-                                                <input type="text" class="form-control" id="" placeholder="">
+                                                {!! Form::text('price', null, ['class' => 'form-control']) !!}
                                            </div>         
                                       </div>  
                                    </div> 
-                                    <button type= "button" class="submit-button btn btn-primary" onclick="location.href='{!! url('lluviafija/listarAlquiler') !!}'">Guardar</button>
-                                    <a class=" submit-button btn btn-default" href="{!! url('lluviafija/listarAlquiler') !!}" role="button">Cancelar</a>
-                                  </form>
+                                    <button type= "submit" class="submit-button btn btn-primary">Guardar</button>
+                                    <a class=" submit-button btn btn-default" href="{!! url('rentals') !!}" role="button">Cancelar</a>      
+                                    {!! Form::close() !!}
                             </div>
                         </div>
                     </div>
