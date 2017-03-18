@@ -7,7 +7,7 @@
                 "url": "https://cdn.datatables.net/plug-ins/1.10.13/i18n/Spanish.json"
                 }
         });
-          $('#cabana').DataTable({
+          $('#cabin').DataTable({
                     responsive: true,
                     "scrollX": false,
                     "language": {

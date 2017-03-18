@@ -19,7 +19,7 @@ class CreateCabinsTable extends Migration
             $table->string('description');
             $table->integer('capacity');
             $table->float('price',11,2)->default(0.0);
-            $table->boolean('available');
+            $table->boolean('available')->nullable;
             $table->timestamps();
         });
     }
