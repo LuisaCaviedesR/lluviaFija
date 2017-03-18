@@ -38,7 +38,23 @@ class RentalController extends Controller
         ]);*/
         Rental::create($input);
         Session::flash('flash_message', 'Rental successfully added!');
-        return view('rentals.index');
+        return redirect('rentals');
+    }
+    
+    public function destroy(Request $request, $id)
+     {
+         try
+         {
+            $rental = Rental::findOrFail($id);
+            $rental->delete();
+            Session::flash('flash_message', 'User successfully deleted!');
+            return redirect('rentals');
+         }
+         catch(ModelNotFoundException $e)
+         {
+            Session::flash('flash_message', "The User ($id) could not be found to be deleted!");
+            return redirect()->back();
+        }
     }
     
 }

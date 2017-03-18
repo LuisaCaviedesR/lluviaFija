@@ -36,3 +36,9 @@ $(".search-select").select2({
   allowClear: true,
   language : 'es'    
 });
+
+
+function datediff(datein,dateout){
+    var diff =  Math.floor(( Date.parse(dateout) - Date.parse(datein) ) / 86400000);
+    alert(diff);
+}
