@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class AfiliadoController extends Controller
+class AffiliateController extends Controller
 {
     public function crearAfiliado(){
         return view('afiliados/crearAfiliado');/*Nombre de la vista*/

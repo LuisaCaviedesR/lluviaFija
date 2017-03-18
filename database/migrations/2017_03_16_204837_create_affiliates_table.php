@@ -15,7 +15,6 @@ class CreateAffiliatesTable extends Migration
     {
         //
          Schema::create('affiliates', function (Blueprint $table) {
-            $table->increments('id');
             $table->integer('afilliate_id')->unique();
             $table->integer('id_type_document');
             $table->string('name');
