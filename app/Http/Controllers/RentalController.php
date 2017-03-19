@@ -82,6 +82,18 @@ class RentalController extends Controller
         return redirect('rentals');
     }
     
+    
+    public function show(Request $request, $id){
+        try{
+            $rental = Rental::findOrFail($id);
+            return view('rentals.show', ['data' => $rental]);
+        }
+        catch(ModelNotFoundException $e){
+            Session::flash('flash_message', "El Alquiler ($id) no fue encontrado!");
+            return redirect()->back();
+        }
+    }
+    
     public function destroy(Request $request, $id)
      {
          try
@@ -93,7 +105,7 @@ class RentalController extends Controller
          }
          catch(ModelNotFoundException $e)
          {
-            Session::flash('flash_message', "The User ($id) could not be found to be deleted!");
+            Session::flash('flash_message', "El Alquiler ($id) no fue encontrado para ser borrado!");
             return redirect()->back();
         }
     }

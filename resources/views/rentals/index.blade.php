@@ -41,6 +41,9 @@
                             <a href="{{ route('rentals.edit', $rental->id) }}">
                                 <i class="fa fa-pencil fa-fw"></i>
                             </a>
+                            <a href="{{ route('rentals.show', $rental->id) }}">
+                                <i class="fa fa-file-text-o fa-fw"></i>
+                            </a>
                             {!! Form::open(['method' => 'DELETE','route' => ['rentals.destroy', $rental->id],'style'=>'display: inline-block']) !!}
                                 {!! Form::button('<span class="fa fa-trash-o fa-fw"></span>',['class'=>'bigicon delete_button','type'=>'submit']) !!}
                             {!! Form::close() !!}
