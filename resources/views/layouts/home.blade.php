@@ -17,7 +17,5 @@
          <!-- Scripts -->
         {!! Html::script('https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js') !!}
         {!! Html::script('assets/js/bootstrap.min.js') !!}
-        {!! Html::script('js/layout.js') !!}
-        {!! Html::script('js/funciones.js') !!}
-    </body>
+  </body>
 </html>

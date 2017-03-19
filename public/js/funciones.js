@@ -40,5 +40,28 @@ $(".search-select").select2({
 
 function datediff(datein,dateout){
     var diff =  Math.floor(( Date.parse(dateout) - Date.parse(datein) ) / 86400000);
-    alert(diff);
+    var days=diff+1;
+    var nights=diff;
+    if(isNaN(diff)){
+        days=0;
+        nights=0;
+    }
+    $('#days').val(days);
+    $('#nights').val(nights);
+    $('#price').val('0');
 }
+
+$('#datein').change(function(e) {
+    var datein=$('#datein').val();
+    var dateout=$('#dateout').val();
+    datediff(datein,dateout);
+});
+$('#dateout').change(function(e) {
+    var datein=$('#datein').val();
+    var dateout=$('#dateout').val();
+    datediff(datein,dateout);
+   
+});
+
+
+

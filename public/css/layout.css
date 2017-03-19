@@ -426,7 +426,7 @@ a {
 }
 
 .bigicon {
-    color: #36A0FF;
+    color: #00BBDD;
 }
 
 .fix-padding-left{
@@ -441,4 +441,8 @@ a {
 .select2-container .select2-choice {
 
   line-height: 15px
+}
+.delete_button{
+    background-color: transparent;
+    border:transparent;
 }

@@ -13,6 +13,9 @@ class Rental extends Model
      * @var array
      */
     protected $fillable = [
-        'days', 'nights', 'price','quantity','datein','dateout'
+        'days', 'nights', 'price','quantity','datein','dateout','cabin_id'
     ];
+    
+    
+    
 }

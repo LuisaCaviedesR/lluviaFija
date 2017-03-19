@@ -23,8 +23,9 @@
 				            <th width="16%">#Personas</th>
 				            <th width="16%">Afiliado</th>
                             <th width="16%">Celular</th>
-				            <th width="17%">Fecha Ingeso</th>
+				            <th width="17%">Fecha Ingreso</th>
                             <th width="17%">Fecha Retiro</th>
+                            <th width="17%">Acciones</th>
                           
 				        </tr>
 	 		        </thead>
@@ -36,7 +37,14 @@
                         <td></td>
                         <td>{{ $rental->datein }}</td>
                         <td>{{ $rental->dateout }}</td>
-                      
+                        <td>
+                            <a href="{{ route('rentals.edit', $rental->id) }}">
+                                <i class="fa fa-pencil fa-fw"></i>
+                            </a>
+                            {!! Form::open(['method' => 'DELETE','route' => ['rentals.destroy', $rental->id],'style'=>'display: inline-block']) !!}
+                                {!! Form::button('<span class="fa fa-trash-o fa-fw"></span>',['class'=>'bigicon delete_button','type'=>'submit']) !!}
+                            {!! Form::close() !!}
+                        </td>
                     </tr>
                     @endforeach  
 				    </table>
