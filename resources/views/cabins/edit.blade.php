@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="panel panel-default">
-                <div class="panel-heading">Crear Cabañas</div>
+                <div class="panel-heading">Editar Cabañas</div>
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-sm-6">
@@ -16,19 +16,22 @@
                                         @endforeach
                                     </div>
                                 @endif
-                                {!! Form::open(['route' => 'cabins.store']) !!}          	      
+                                {!! Form::model($data, [
+                                    'method' => 'PUT',
+                                    'route' => ['cabins.update', $data->id]
+                                ]) !!}
                                     <div class="form-group">
                                         {!! Form::label('cabin_number', 'Número Cabaña', ['class' => 'control-label']) !!}
                                         {!! Form::text('cabin_number', null, ['class' => 'form-control']) !!}
                                     </div>
                                     <div class="form-group">
                                         {!! Form::label('description', 'Descripción', ['class' => 'control-label']) !!}
-                                        {!! Form::textarea('description', null, ['class' => 'form-control']) !!}               
+                                        {!! Form::textarea('description', null, ['class' => 'form-control']) !!}
                                     </div>
                                     <div class="form-group">
                                         {!! Form::label('capacity', 'Capacidad', ['class' => 'control-label']) !!}
                                         {!! Form::text('capacity', null, ['class' => 'form-control']) !!}
-                                    </div>  
+                                    </div>
                                     <div class="form-group">
                                         {!! Form::label('price', 'Precio', ['class' => 'control-label']) !!}
                                         {!! Form::text('price', null, ['class' => 'form-control']) !!}

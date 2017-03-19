@@ -32,10 +32,20 @@
                         <td>{{$cabin->cabin_number}}</td>
                         <td>{{$cabin->capacity}}</td>
                         <td>{{$cabin->description}}</td>
-                        <td>{{$cabin->available}}</td>
+                        @if($cabin->available == 1 )
+                            <td>Si</td>
+                        @else
+                            <td>No</td>
+                        @endif
                         <td>{{$cabin->price}}</td>
-                        <td><a href=""><i class="fa fa-pencil fa-fw" title="Editar"></i></a>
-                            <a href="#" ><i class="fa fa-trash-o  fa-fw" title="Borrar"></i></a> 
+                        <td>
+                            <a href="{{ route('cabins.edit', $cabin->id) }}">
+                                <i class="fa fa-pencil fa-fw"></i>
+                            </a>
+                            <br>
+                            {!! Form::open(['method' => 'DELETE','route' => ['cabins.destroy', $cabin->id]]) !!}
+                                {!! Form::button('<span class="fa fa-trash-o fa-fw"></span>',['class' => 'btn btn-primary','type'=>'submit']) !!}
+                            {!! Form::close() !!}
                         </td>
                     </tr>
                     @endforeach
