@@ -4,7 +4,7 @@
                                     </div> -->
                                     <div class="form-group">
                                         {!! Form::label('cabin_id', 'Cabaña', ['class' => 'control-label']) !!}
-                                        {{ Form::select('cabin_id', $listCabins, isset($data->cabin_id) ? $data->cabin_id : null, array('class' => 'form-control search-select')) }}          
+                                        {{ Form::select('cabin_id', $listCabins, isset($data->cabin_id) ? $data->cabin_id : null, ['placeholder' => 'Buscar', 'class' => 'form-control search-select']) }}          
                                     </div>
                                      <div class="form-group">	
        		                           <label>Fechas</label>
