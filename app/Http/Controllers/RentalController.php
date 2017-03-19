@@ -12,7 +12,7 @@ class RentalController extends Controller
 {
     //
      public function index(){
-        $rentals = Rental::all();
+        $rentals = Rental::with('cabins')->get();
        
         return view('rentals.index', ['list' => $rentals]);
     }

@@ -31,7 +31,7 @@
 	 		        </thead>
                     @foreach($list as $rental)  
                     <tr>                      
-                        <td></td>
+                        <td>{{$rental->cabins[0]['cabin_number']}}</td>
                         <td>{{ $rental->quantity }}</td>
                         <td></td>
                         <td></td>

@@ -16,6 +16,9 @@ class Cabin extends Model
         'cabin_number', 'capacity', 'description','price','available'
     ];
     
-   
+   public function rentals()
+   {
+       return $this->hasMany('App\Rental');
+   }
 
 }

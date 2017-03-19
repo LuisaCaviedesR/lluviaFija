@@ -16,5 +16,8 @@ class Rental extends Model
         'days', 'nights', 'price','quantity','datein','dateout','cabin_id'
     ];
     
-      
+   public function cabins()
+   {
+       return $this->belongsToMany('App\Cabin','rentals','cabin_id');
+   }
 }
