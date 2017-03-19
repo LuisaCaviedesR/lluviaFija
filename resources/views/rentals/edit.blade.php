@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="panel panel-default">
-                <div class="panel-heading">Registrar Alquiler</div>
+                <div class="panel-heading">Editar Alquiler</div>
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-sm-6">

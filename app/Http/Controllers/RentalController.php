@@ -47,7 +47,7 @@ class RentalController extends Controller
                 'dateout' => 'required',
                 'days' => 'required',
                 'nights' => 'required',
-                'price' => 'required'
+                'price' => 'required',
                 'quantity' => 'required | numeric'
                
             ]);
@@ -71,7 +71,7 @@ class RentalController extends Controller
                 'dateout' => 'required',
                 'days' => 'required',
                 'nights' => 'required',
-                'price' => 'required'
+                'price' => 'required',
                 'quantity' => 'required | numeric'
                
             ]);
