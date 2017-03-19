@@ -24,12 +24,7 @@ class RentalController extends Controller
 
     }
     
-    public function show(Request $request, $id)
-    {
-        
-    }
-    
-    public function edit(Request $request, $id){
+   public function edit(Request $request, $id){
         try{
             $rental = Rental::findOrFail($id);
             $affiliates = affiliate::pluck('name', 'id');
@@ -46,20 +41,23 @@ class RentalController extends Controller
     public function update(Request $request, $id){
         try{
             $rental = rental::findOrFail($id);
-            /*$this->validate($request, [ //validación para los campos
-                'cabin_number' => 'required | numeric ',
-                'description' => 'required | string| max:255',
-                'capacity' => 'required | numeric',
-                'precio' => 'numeric',
-                'available' => 'boolean',
-            ]);*/
+            $this->validate($request, [ //validación para los campos
+                'cabin_id' => 'required',
+                'datein' => 'required',
+                'dateout' => 'required',
+                'days' => 'required',
+                'nights' => 'required',
+                'price' => 'required'
+                'quantity' => 'required | numeric'
+               
+            ]);
             $input = $request->all();
             $rental->fill($input)->save();
             Session::flash('flash_message', 'Alquiler ha sido editado!');
             return redirect('rentals');
         }
         catch(ModelNotFoundException $e){
-            Session::flash('flash_message', "The Cabin could not be found to be edited!");
+            Session::flash('flash_message', "El alquiler no ha podido ser encontrado para editar!");
             return redirect()->back();
         }
     }
@@ -67,11 +65,16 @@ class RentalController extends Controller
     public function store(Request $request)
     {
        $input = $request->all();
-        /*$this->validate($request, [
-            'name' => 'required | string | alpha_dash | max:66',
-            'email' => 'required | email',
-            'password' => 'required | string | min:8 | max:64',
-        ]);*/
+        $this->validate($request, [ //validación para los campos
+                'cabin_id' => 'required',
+                'datein' => 'required',
+                'dateout' => 'required',
+                'days' => 'required',
+                'nights' => 'required',
+                'price' => 'required'
+                'quantity' => 'required | numeric'
+               
+            ]);
         Rental::create($input);
         Session::flash('flash_message', 'Alquiler ha sido registrado!');
         return redirect('rentals');
