@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Cabin;
 use Session;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class CabinController extends Controller
 {
@@ -31,14 +32,65 @@ class CabinController extends Controller
         return redirect('/cabins');
     }
 
-
-
-    public function editarCabana(){
-        return view('cabanas/crearCabana');/*Nombre de la vista*/
+    //Elimina un usuario de la base de datos
+    public function destroy(Request $request, $id){
+        try{
+             $cabin = Cabin::findOrFail($id);
+             $cabin->delete();
+             Session::flash('flash_message', "Cabin successfully deleted!");
+             return redirect('/cabins');
+         }
+        catch(ModelNotFoundException $e){
+             Session::flash('flash_message', "The Cabin could not be found to be deleted!");
+             return redirect()->back();
+        }
     }
 
-    public function eliminarCabana(){
-       /* creo que no debe existir ruta para el eliminar
-       return view('afiliados');/*Nombre de la vista*/
-    }   
+      //Para mostrar la información de un usuario especifico
+   public function show(Request $request, $id){
+        try{
+            $cabin = Cabin::findOrFail($id);
+            // return view('users.show')->withData($user);
+            return view('cabins.show', ['data' => $user]);
+        }
+        catch(ModelNotFoundException $e){
+            Session::flash('flash_message', "The Cabin ($id) could not be found!");
+            return redirect()->back();
+        }
+    }
+
+ //Para editar un usuario (muestra el formulario con la información para editar)
+    public function edit(Request $request, $id){
+        try{
+            $cabin = Cabin::findOrFail($id);
+            return view('cabins.edit', ['data' => $cabin]);
+        }
+        catch(ModelNotFoundException $e){
+            Session::flash('flash_message', "The User could not be found to be edited!");
+            return redirect()->back();
+        }
+    }
+
+    //Para almacenar los datos de la edición del usuario en la bd
+    public function update(Request $request, $id){
+        try{
+            $cabin = Cabin::findOrFail($id);
+            $this->validate($request, [ //validación para los campos
+                'cabin_number' => 'required | numeric ',
+                'description' => 'required | string| max:255',
+                'capacity' => 'required | numeric',
+                'precio' => 'numeric',
+                'available' => 'boolean',
+            ]);
+            $input = $request->all();
+            $cabin->fill($input)->save();
+            Session::flash('flash_message', 'Cabin successfully edited!');
+            return redirect('/cabins');
+        }
+        catch(ModelNotFoundException $e){
+            Session::flash('flash_message', "The Cabin could not be found to be edited!");
+            return redirect()->back();
+        }
+    }
+
 }
