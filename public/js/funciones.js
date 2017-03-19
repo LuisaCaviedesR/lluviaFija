@@ -29,13 +29,15 @@
                     }
             });
      $('.input-daterange').datepicker();
+ 
 
-    });
+});
 $(".search-select").select2({
   placeholder: "Buscar",
   allowClear: true,
   language : 'es'    
 });
+
 
 
 function datediff(datein,dateout){

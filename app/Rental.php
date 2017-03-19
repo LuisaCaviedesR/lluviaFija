@@ -16,6 +16,5 @@ class Rental extends Model
         'days', 'nights', 'price','quantity','datein','dateout','cabin_id'
     ];
     
-    
-    
+      
 }

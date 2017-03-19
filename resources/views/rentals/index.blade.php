@@ -16,7 +16,7 @@
                 </div> 
            	    <div class="panel-body">
                 <div class="table-responsive col-lgl-12">
-           		  <table class="table table-striped table-bordered table-hover" id="alquiler">
+                  <table class="table table-striped table-bordered table-hover" id="alquiler">
 	 		        <thead>
 				        <tr>
 				            <th width="16%"># Cabaña</th>
