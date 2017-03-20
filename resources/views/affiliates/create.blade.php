@@ -8,21 +8,14 @@
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-sm-6">
-                                <!--Mensajes de error en validación de campos-->
-                                @if($errors->any())
-                                    <div class="alert alert-danger">
-                                        @foreach($errors->all() as $error)
-                                            <p>{{ $error }}</p>
-                                        @endforeach
-                                    </div>
-                                @endif
+
                                     {!! Form::open(['route' => 'affiliates.store']) !!}
                                     <div class="form-group">
                                         {!! Form::label('id_type_document', 'Tipo de Identificación', ['class' => 'control-label']) !!}
-                                        {!! Form::select('id_type_document', null, ['class' => 'form-control']) !!}
+                                        {{ Form::select('id_type_document', $listDocumentsTypes, null, array('class' => 'form-control search-select')) }}
                                     </div>
                                     <div class="form-group">
-                                        {!! Form::label('affiliate_id', 'Número de Indenticación', ['class' => 'control-label']) !!}
+                                        {!! Form::label('affiliate_id', 'Número de Identicación', ['class' => 'control-label']) !!}
                                         {!! Form::text('affiliate_id', null, ['class' => 'form-control']) !!}
                                     </div>
                                     <div class="form-group">
@@ -35,7 +28,7 @@
                                     </div>
                                     <div class='form-group'>
                                         {!! Form::label('email', 'Email', ['class' => 'control-label']) !!}
-                                        {!! Form::text('amail', 'null',['class' => 'form-control']) !!}
+                                        {!! Form::text('email', 'null',['class' => 'form-control']) !!}
                                     </div>
                                     <div class='form-group'>
                                         {!! Form::label('phone', 'Telefono', ['class' => 'control-label']) !!}

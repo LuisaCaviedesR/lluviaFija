@@ -20,7 +20,7 @@
 	 		        <thead>
 				        <tr>
                             <th width="16%">Tipo ID</th>
-				            <th width="16%">Id</th>
+				            <th width="16%">Número de Identificación</th>
 				            <th width="16%">Nombres</th>
 				            <th width="16%">Apellidos</th>
                             <th width="16%">Email</th>
@@ -35,9 +35,20 @@
                         <td>{{$affiliate->name}}</td>
                         <td>{{$affiliate->lastname}}</td>
                         <td>{{$affiliate->email}}</td>
-                        <td>{{$affiliate->phine}}</td>
-                        <td><a href=""><i class="fa fa-pencil fa-fw" title="Editar"></i></a>
-                            <a href="#" ><i class="fa fa-trash-o  fa-fw" title="Borrar"></i></a>
+                        <td>{{$affiliate->phone}}</td>
+                        <td><a href="{{ route('affiliates.edit', $affiliate->id) }}">
+                              <i class="fa fa-pencil fa-fw" title="Editar"></i>
+                            </a>
+
+                            <!-------------------------- borrar ------------------------->
+                             {!! Form::open(['method' => 'DELETE','route' => ['affiliates.destroy', $affiliate->id],'style'=>'display: inline-block']) !!}
+
+                                {!! Form::button('<span class="fa fa-trash-o fa-fw"></span>',['class'=>'bigicon delete_button','type'=>'submit']) !!}
+
+                            {!! Form::close() !!}
+                           <!-- <a href="#" ><i class="fa fa-trash-o  fa-fw" title="Borrar"></i></a>-->
+
+                            <!---------------------------- fin de borar --------------------->
                         </td>
                     </tr>
                       @endforeach

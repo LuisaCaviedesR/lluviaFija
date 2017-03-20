@@ -13,9 +13,10 @@ class CreateAffiliatesTable extends Migration
      */
     public function up()
     {
-        //
+       //
          Schema::create('affiliates', function (Blueprint $table) {
-            $table->integer('afilliate_id')->unique();
+            $table->increments('id');
+            $table->integer('affiliate_id')->unique();
             $table->integer('id_type_document');
             $table->string('name');
             $table->string('lastname');
