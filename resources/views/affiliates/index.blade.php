@@ -39,6 +39,9 @@
                         <td><a href="{{ route('affiliates.edit', $affiliate->id) }}">
                               <i class="fa fa-pencil fa-fw" title="Editar"></i>
                             </a>
+                             <a href="{{ route('affiliates.show', $affiliate->id) }}">
+                                <i class="fa fa-file-text-o fa-fw"></i>
+                            </a>
 
                             <!-------------------------- borrar ------------------------->
                              {!! Form::open(['method' => 'DELETE','route' => ['affiliates.destroy', $affiliate->id],'style'=>'display: inline-block']) !!}

@@ -86,6 +86,17 @@ class AffiliateController extends Controller
             return redirect()->back();
         }
     }
+    
+     public function show(Request $request, $id){
+        try{
+            $affiliate = affiliate::findOrFail($id);
+            return view('affiliates.show', ['data' => $affiliate]);
+        }
+        catch(ModelNotFoundException $e){
+            Session::flash('flash_message', "El Afiliado ($id) no fue encontrado!");
+            return redirect()->back();
+        }
+    }
 
 }
 
