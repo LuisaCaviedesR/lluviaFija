@@ -21,5 +21,9 @@ class Affiliate extends Model
        
     }
     
+    public function documentTypes()
+   {
+       return $this->belongsTo('App\DocumentType','id_type_document');
+   }
      
 }

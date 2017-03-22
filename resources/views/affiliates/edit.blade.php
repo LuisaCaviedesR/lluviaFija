@@ -26,7 +26,7 @@
 
                                 <div class="form-group">
                                         {!! Form::label('id_type_document', 'Tipo identificacion    ', ['class' => 'control-label']) !!}
-                                        {{ Form::select('id_type_document', $listDocumentsTypes, null, array('class' => 'form-control search-select')) }}
+                                        {{ Form::select('id_type_document', $listDocumentsTypes, null, array('class' => 'form-control')) }}
                                     </div>
 
                                  <div class="form-group">

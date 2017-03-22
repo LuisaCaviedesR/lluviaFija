@@ -10,4 +10,10 @@ class DocumentType extends Model
      protected $fillable = [
         'id', 'name'
     ];
+    
+     public function affiliates()
+   {
+       return $this->hasMany('App\affiliate');
+   }
+   
 }

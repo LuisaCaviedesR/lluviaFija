@@ -11,15 +11,15 @@
                                 <table class="table table-striped table-bordered table-hover">
                                     <tr>
                                         <td>Afiliado</td>
-                                        <td></td>
+                                        <td>{{$data->affiliates->full_name}}</td>
                                         <td>Identificación</td>
-                                        <td></td>
+                                        <td>{{$data->affiliates->number_id}}</td>
                                     </tr>
                                     <tr>
                                         <td>Cabaña</td>
-                                        <td></td>
+                                        <td>{{$data->cabins->cabin_number}}</td>
                                         <td>Capacidad max</td>
-                                        <td></td>
+                                        <td>{{$data->cabins->capacity}}</td>
                                     </tr>
                                     <tr>
                                         <td>Fecha Ingreso</td>
