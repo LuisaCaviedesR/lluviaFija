@@ -13,16 +13,16 @@ class Rental extends Model
      * @var array
      */
     protected $fillable = [
-        'days', 'nights', 'price','quantity','datein','dateout','cabin_id','affiliates_id'
+        'days', 'nights', 'price','quantity','datein','dateout','cabin_id','affiliate_id'
     ];
-    
+   
    public function cabins()
    {
-       return $this->belongsToMany('App\Cabin','rentals','cabin_id');
+       return $this->belongsTo('App\Cabin','cabin_id');
    }
-    
+   
    public function affiliates()
    {
-       return $this->belongsToMany('App\affiliate','rentals','affiliates_id');
+       return $this->belongsTo('App\affiliate','affiliate_id');
    }
 }

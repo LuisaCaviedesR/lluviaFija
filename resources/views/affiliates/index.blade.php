@@ -31,7 +31,7 @@
                     @foreach($list as $affiliate)
                     <tr>
                         <td>{{$affiliate->id_type_document}}</td>
-                        <td>{{$affiliate->affiliate_id}}</td>
+                        <td>{{$affiliate->number_id}}</td>
                         <td>{{$affiliate->name}}</td>
                         <td>{{$affiliate->lastname}}</td>
                         <td>{{$affiliate->email}}</td>

@@ -92,5 +92,13 @@ class CabinController extends Controller
             return redirect()->back();
         }
     }
+    
+    
+     public function getPrice($id)
+    {
+      $cabin = Cabin::findOrFail($id);
+      $price = $cabin->price;    
+      return $price;
+    }
 
 }

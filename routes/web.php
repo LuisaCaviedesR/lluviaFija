@@ -33,3 +33,5 @@ Route::resource('rentals', 'RentalController');
 
 Route::resource('affiliates', 'AffiliateController');
 
+route::get('cabinsPrice/{id}', 'CabinController@getPrice');
+

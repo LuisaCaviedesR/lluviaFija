@@ -21,8 +21,8 @@
                                         {{ Form::select('id_type_document', $listDocumentsTypes, null, array('class' => 'form-control')) }}
                                     </div>
                                     <div class="form-group">
-                                        {!! Form::label('affiliate_id', 'Número de Identicación', ['class' => 'control-label']) !!}
-                                        {!! Form::text('affiliate_id', null, ['class' => 'form-control']) !!}
+                                        {!! Form::label('number_id', 'Número de Identicación', ['class' => 'control-label']) !!}
+                                        {!! Form::text('number_id', null, ['class' => 'form-control']) !!}
                                     </div>
                                     <div class="form-group">
                                         {!! Form::label('name', 'Nombres', ['class' => 'control-label']) !!}

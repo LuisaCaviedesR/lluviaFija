@@ -30,8 +30,8 @@
                                     </div>
 
                                  <div class="form-group">
-                                        {!! Form::label('affiliate_id', 'Identificacion de Afiliado    ', ['class' => 'control-label']) !!}
-                                        {!! Form::text('affiliate_id', null, ['class' => 'form-control']) !!}
+                                        {!! Form::label('number_id', 'Identificacion de Afiliado    ', ['class' => 'control-label']) !!}
+                                        {!! Form::text('number_id', null, ['class' => 'form-control']) !!}
                                     </div>
 
                                  <div class="form-group">

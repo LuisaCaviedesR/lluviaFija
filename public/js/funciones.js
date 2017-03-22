@@ -50,7 +50,7 @@ function datediff(datein,dateout){
     }
     $('#days').val(days);
     $('#nights').val(nights);
-    $('#price').val('0');
+   
 }
 
 $('#datein').change(function(e) {
@@ -65,5 +65,18 @@ $('#dateout').change(function(e) {
    
 });
 
+$('#affiliate_id').on('change', function(e){
+    var id = $(this).val();
+    var request = $.get('/cabinsPrice/'+id);
+    request.done(function(response) {
+        $('#cabinPrice').val(response);      
+              
+    });
+    
+});
 
+$('#quantity').on('change', function(e){
+   var price = $('#days').val()*$('#cabinPrice').val()*$(this).val(); 
+   $('#price').val(price); 
+});
 
