@@ -28,7 +28,7 @@ class AffiliateController extends Controller
             'affiliate_id' => 'required | numeric',
             'name' => 'required | string| max:80',
             'lastname' => 'required | string| max:80',
-            'email' => 'required | string| max:150',
+            'email' => 'required | email| max:150',
             'phone' => 'required | string| max:20',
         ]);
         Affiliate::create($input);

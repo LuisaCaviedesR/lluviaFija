@@ -1,7 +1,7 @@
-                                    <!-- <div class="form-group">
+                                    <div class="form-group">
                                          {!! Form::label('affiliate_id', 'Afiliados', ['class' => 'control-label']) !!}
-                                        {{ Form::select('affiliate_id', $listAffiliates, null, array('class' => 'form-control search-select')) }}                                        
-                                    </div> -->
+                                        {{ Form::select('affiliate_id', $listAffiliates, null,  ['placeholder' => 'Buscar', 'class' => 'form-control search-select']) }}                                        
+                                    </div> 
                                     <div class="form-group">
                                         {!! Form::label('cabin_id', 'Cabaña', ['class' => 'control-label']) !!}
                                         {{ Form::select('cabin_id', $listCabins, isset($data->cabin_id) ? $data->cabin_id : null, ['placeholder' => 'Buscar', 'class' => 'form-control search-select']) }}          
