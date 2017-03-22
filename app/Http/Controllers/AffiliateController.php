@@ -16,8 +16,8 @@ class AffiliateController extends Controller
     }
 
     public function create(Request $request)    {
-       $documentsTypes = DocumentType::pluck('name', 'id');
-         return view('affiliates.create',['listDocumentsTypes' => $documentsTypes]);
+       $documentTypes = DocumentType::pluck('name', 'id');
+       return view('affiliates.create',['listDocumentsTypes' => $documentTypes]);
     }
 
     public function store(Request $request)    {
@@ -39,8 +39,8 @@ class AffiliateController extends Controller
     public function edit(Request $request, $id){
         try{
              $affiliate = Affiliate::findOrFail($id);
-             $documentsTypes = DocumentType::pluck('name', 'id');
-            return view('affiliates.edit', ['data' => $affiliate,'listDocumentsTypes' => $documentsTypes]);
+             $documentTypes = DocumentType::pluck('name', 'id');
+            return view('affiliates.edit', ['data' => $affiliate,'listDocumentsTypes' => $documentTypes]);
         }
         catch(ModelNotFoundException $e){
             Session::flash('flash_message', "The Afiliado could not be found to be edited!");
@@ -57,7 +57,7 @@ class AffiliateController extends Controller
             'affiliate_id' => 'required | numeric',
             'name' => 'required | string| max:80',
             'lastname' => 'required | string| max:80',
-            'email' => 'required | string| max:150',
+            'email' => 'required |email| max:150',
             'phone' => 'required | string| max:20',
             ]);
             $input = $request->all();

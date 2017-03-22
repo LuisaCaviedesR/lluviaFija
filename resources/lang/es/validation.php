@@ -38,7 +38,7 @@ return [
     'digits_between'       => 'The :attribute must be between :min and :max digits.',
     'dimensions'           => 'The :attribute has invalid image dimensions.',
     'distinct'             => 'The :attribute field has a duplicate value.',
-    'email'                => 'The :attribute must be a valid email address.',
+    'email'                => 'El :attribute debe ser una direccion de correo valida.',
     'exists'               => 'The selected :attribute is invalid.',
     'file'                 => 'The :attribute must be a file.',
     'filled'               => 'The :attribute field must have a value.',
@@ -51,7 +51,7 @@ return [
     'max'                  => [
         'numeric' => 'The :attribute may not be greater than :max.',
         'file'    => 'The :attribute may not be greater than :max kilobytes.',
-        'string'  => 'The :attribute may not be greater than :max characters.',
+        'string'  => 'El campo :attribute debe tener maximo :max caracteres.',
         'array'   => 'The :attribute may not have more than :max items.',
     ],
     'mimes'                => 'The :attribute must be a file of type: :values.',
@@ -59,7 +59,7 @@ return [
     'min'                  => [
         'numeric' => 'The :attribute must be at least :min.',
         'file'    => 'The :attribute must be at least :min kilobytes.',
-        'string'  => 'The :attribute must be at least :min characters.',
+        'string'  => 'El campo :attribute  debe tener minimo :min caracteres.',
         'array'   => 'The :attribute must have at least :min items.',
     ],
     'not_in'               => 'The selected :attribute is invalid.',
@@ -118,7 +118,13 @@ return [
         'datein'    =>'Fecha Ingreso',
         'dateout'   =>'Fecha Salida',
         'quantity'  =>'Número de Personas',
-        'cabin_id'  => 'Número de cabaña'
+        'cabin_id'  => 'Número de cabaña',
+        'affiliate_id'  => 'Número de identificación',
+        'name'      => 'Nombre',
+        'phone'  => 'Teléfono',
+        'lastname'  => 'Apellido',
+        'email'  => 'Email',
+        'id_type_document'  => 'Tipo de identificación'
 
     ],
 

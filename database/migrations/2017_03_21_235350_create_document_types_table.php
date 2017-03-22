@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDocumentsTypesTable extends Migration
+class CreateDocumentTypesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,13 @@ class CreateDocumentsTypesTable extends Migration
      */
     public function up()
     {
-        Schema::create('documentsTypes', function (Blueprint $table) {
+        //
+         Schema::create('document_types', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
             $table->timestamps();
         });
+
     }
 
     /**
@@ -27,6 +29,7 @@ class CreateDocumentsTypesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('documentsTypes');
+        //
+        Schema::dropIfExists('document_types');
     }
 }
