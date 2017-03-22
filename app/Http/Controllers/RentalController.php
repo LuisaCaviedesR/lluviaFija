@@ -47,8 +47,8 @@ class RentalController extends Controller
                 'affiliate_id'=>'required',
                 'datein' => 'required',
                 'dateout' => 'required',
-                'days' => 'required',
-                'nights' => 'required',
+                'days' => 'required| numeric',
+                'nights' => 'required| numeric',
                 'price' => 'required',
                 'quantity' => 'required | numeric'
                

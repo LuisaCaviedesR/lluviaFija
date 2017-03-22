@@ -25,10 +25,10 @@ class AffiliateController extends Controller
         $input = $request->all();
         $this->validate($request, [ //validación para los campos
             'id_type_document' => 'required | numeric',
-            'number_id' => 'required | numeric',
+            'number_id' => 'required | numeric| unique:affiliates',
             'name' => 'required | string| max:80',
             'lastname' => 'required | string| max:80',
-            'email' => 'required | email| max:150',
+            'email' => 'required | email| max:150|unique:affiliates',
             'phone' => 'required | string| max:20',
         ]);
         Affiliate::create($input);
@@ -54,10 +54,10 @@ class AffiliateController extends Controller
             $affiliate = Affiliate::findOrFail($id);
             $this->validate($request, [ //validación para los campos
             'id_type_document' => 'required | numeric',
-            'number_id' => 'required | numeric',
+            'number_id' => 'required | numeric| unique:affiliates',
             'name' => 'required | string| max:80',
             'lastname' => 'required | string| max:80',
-            'email' => 'required |email| max:150',
+            'email' => 'required |email| max:150| unique:affiliates',
             'phone' => 'required | string| max:20',
             ]);
             $input = $request->all();
