@@ -31,10 +31,10 @@
 	 		        </thead>
                     @foreach($list as $rental)  
                     <tr>                      
-                        <td>{{$rental->cabins[0]['cabin_number']}}</td>
+                        <td>{{$rental}}</td>
                         <td>{{ $rental->quantity }}</td>
-                        <td>{{$rental->affiliates[0]['name']}} {{$rental->affiliates[0]['lastname']}}</td>
-                        <td>{{$rental->affiliates[0]['phone']}}</td>
+                        <td>{{$rental}}</td>
+                        <td>{{$rental->affiliates}}</td>
                         <td>{{ $rental->datein }}</td>
                         <td>{{ $rental->dateout }}</td>
                         <td>

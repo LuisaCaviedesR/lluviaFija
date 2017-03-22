@@ -1,6 +1,6 @@
                                     <div class="form-group">
-                                         {!! Form::label('affiliate_id', 'Afiliados', ['class' => 'control-label']) !!}
-                                        {{ Form::select('affiliate_id', $listAffiliates, null,  ['placeholder' => 'Buscar', 'class' => 'form-control search-select']) }}                                        
+                                         {!! Form::label('affiliates_id', 'Afiliados', ['class' => 'control-label']) !!}
+                                        {{ Form::select('affiliates_id', $listAffiliates, null,  ['placeholder' => 'Buscar', 'class' => 'form-control search-select']) }}                                        
                                     </div> 
                                     <div class="form-group">
                                         {!! Form::label('cabin_id', 'Cabaña', ['class' => 'control-label']) !!}

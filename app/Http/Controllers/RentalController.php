@@ -12,7 +12,7 @@ class RentalController extends Controller
 {
     //
      public function index(){
-        $rentals = Rental::with('cabins','affiliates')->get();
+        $rentals = Rental::with('cabins')->get();
        
         return view('rentals.index', ['list' => $rentals]);
     }
@@ -44,7 +44,7 @@ class RentalController extends Controller
             $rental = rental::findOrFail($id);
             $this->validate($request, [ //validación para los campos
                 'cabin_id' => 'required',
-                'affiliate_id'=>'required',
+                'affiliates_id'=>'required',
                 'datein' => 'required',
                 'dateout' => 'required',
                 'days' => 'required',
@@ -70,7 +70,7 @@ class RentalController extends Controller
        
        $this->validate($request, [ //validación para los campos
                 'cabin_id' => 'required',
-                'affiliate_id'=>'required',
+                'affiliates_id'=>'required',
                 'datein' => 'required',
                 'dateout' => 'required',
                 'days' => 'required',
