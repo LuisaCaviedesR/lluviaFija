@@ -46,19 +46,6 @@ class CabinController extends Controller
         }
     }
 
-      //Para mostrar la información de un usuario especifico
-   public function show(Request $request, $id){
-        try{
-            $cabin = Cabin::findOrFail($id);
-            // return view('users.show')->withData($user);
-            return view('cabins.show', ['data' => $user]);
-        }
-        catch(ModelNotFoundException $e){
-            Session::flash('flash_message', "The Cabin ($id) could not be found!");
-            return redirect()->back();
-        }
-    }
-
  //Para editar un usuario (muestra el formulario con la información para editar)
     public function edit(Request $request, $id){
         try{
@@ -99,6 +86,18 @@ class CabinController extends Controller
       $cabin = Cabin::findOrFail($id);
         
       return $cabin;
+
     }
 
-}
+     public function show(Request $request, $id){
+        try{
+            $cabin = Cabin::findOrFail($id);
+            return view('cabins.show', ['data' => $cabin]);
+        }
+        catch(ModelNotFoundException $e){
+            Session::flash('flash_message', "La Cabaña ($id) no fue encontrado!");
+            return redirect()->back();
+        }
+    }
+
+  }
