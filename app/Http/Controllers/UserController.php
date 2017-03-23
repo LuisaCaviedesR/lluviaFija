@@ -27,7 +27,7 @@ class UserController extends Controller
         $this->validate($request, [ //validación para los campos
             'name' => 'required | string | alpha_dash | max:66',
             'lastname' => 'required | string | max:66',
-            'email' => 'required | email',
+            'email' => 'required | email|unique:users',
             'password' => 'required | string | min:8 | max:64',
         ]);
         User::create($input);
@@ -54,7 +54,7 @@ class UserController extends Controller
             $this->validate($request, [
                 'name' => 'required | string | alpha_dash | max:66',
                 'lastname' => 'required | string | max:66',
-                'email' => 'required | email',
+                'email' => 'required | email|unique:users',
                 'password' => 'required | string | min:8 | max:64',
             ]);
             $input = $request->all();
