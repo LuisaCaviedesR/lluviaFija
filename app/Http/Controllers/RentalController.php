@@ -18,7 +18,7 @@ class RentalController extends Controller
     }
     
     public function create(){
-        $affiliates = affiliate::pluck('name', 'id');
+        $affiliates = affiliate::get()->pluck('id_name', 'id');
         $cabins = Cabin::pluck('cabin_number', 'id');
         $rental='';
         return view('rentals.create',['data' => $rental,'listAffiliates' => $affiliates,'listCabins' => $cabins]);
@@ -28,7 +28,7 @@ class RentalController extends Controller
    public function edit(Request $request, $id){
         try{
             $rental = Rental::findOrFail($id);
-            $affiliates = affiliate::pluck('name', 'id');
+            $affiliates = affiliate::get()->pluck('id_name', 'id');
             $cabins = Cabin::pluck('cabin_number', 'id');
             return view('rentals.edit', ['data' => $rental,'listAffiliates' => $affiliates,'listCabins' => $cabins]);
         }
