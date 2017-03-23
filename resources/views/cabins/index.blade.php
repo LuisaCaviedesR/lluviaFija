@@ -42,9 +42,8 @@
                             <a href="{{ route('cabins.edit', $cabin->id) }}">
                                 <i class="fa fa-pencil fa-fw"></i>
                             </a>
-                            <br>
                             {!! Form::open(['method' => 'DELETE','route' => ['cabins.destroy', $cabin->id]]) !!}
-                                {!! Form::button('<span class="fa fa-trash-o fa-fw"></span>',['class' => 'btn btn-primary','type'=>'submit']) !!}
+                                {!! Form::button('<span class="fa fa-trash-o fa-fw"></span>',['class' => 'btn btn-transparent','type'=>'submit']) !!}
                             {!! Form::close() !!}
                         </td>
                     </tr>

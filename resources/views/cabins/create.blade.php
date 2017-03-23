@@ -39,15 +39,15 @@
                                     <div class="row">
                                         <div class="col-xs-2">
                                             {!! Form::label('si', 'Si', ['class' => 'control-label']) !!}
-                                            {!! Form::checkbox('available', 1, null, ['class' => 'control-label']) !!}
+                                            {!! Form::radio('available', 1, true, ['class' => 'control-label']) !!}
                                         </div>
                                         <div class="col-xs-2">
                                             {!! Form::label('no', 'No', ['class' => 'control-label']) !!}
-                                            {!! Form::checkbox('available', 0, null, ['class' => 'control-label']) !!}
+                                            {!! Form::radio('available', 0, ['class' => 'control-label']) !!}
                                         </div>
                                     </div>
                                     {!! Form::submit('Guardar', ['class' => 'btn btn-primary']) !!}
-                                    <a class="btn btn-default" href="{!! url('cabins/index') !!}" role="button">Cancelar</a>
+                                    <a class="btn btn-default" href="{{ route('cabins.index') }}" role="button">Cancelar</a>
                                 {!! Form::close() !!}
                             </div>
                         </div>

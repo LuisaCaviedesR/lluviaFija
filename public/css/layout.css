@@ -170,6 +170,11 @@ body {
     border: none !important;
 }
 
+.btn-transparent {
+    background: transparent;
+    color: #00BBDD;
+}
+
 .btn-primary.btn-outline {
     color: #428bca;
 }
