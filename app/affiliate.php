@@ -21,6 +21,12 @@ class Affiliate extends Model
        
     }
     
+     public function getIdNameAttribute()
+    {
+        return $this->number_id." ".$this->name . " " . $this->lastname;
+       
+    }
+    
     public function documentTypes()
    {
        return $this->belongsTo('App\DocumentType','id_type_document');

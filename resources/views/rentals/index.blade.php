@@ -15,7 +15,18 @@
                     </div>
                 </div> 
            	    <div class="panel-body">
-                <div class="table-responsive col-lgl-12">
+                <div class="table-responsive col-lg-12">
+                  <div class="row">
+                       <div class="form-group col-sm-4">	
+       		        <label>Filtro fechas</label>
+                        <div class="input-daterange input-group" id="datepicker">
+                        <span class="input-group-addon">de</span>
+                        {!! Form::text('dateStart',null, ['class' => 'input-sm form-control','id'=>'dateStart']) !!} 
+                         <span class="input-group-addon">a</span>
+                         {!! Form::text('dateEnd',null, ['class' => 'input-sm form-control','id'=>'dateEnd']) !!} 
+                         </div>
+       		       </div> 
+                  </div>             
                   <table class="table table-striped table-bordered table-hover" id="alquiler">
 	 		        <thead>
 				        <tr>
