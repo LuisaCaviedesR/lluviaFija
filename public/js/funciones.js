@@ -65,18 +65,25 @@ $('#dateout').change(function(e) {
    
 });
 
-$('#affiliate_id').on('change', function(e){
+$('#cabin_id').on('change', function(e){
     var id = $(this).val();
     var request = $.get('/cabinsPrice/'+id);
     request.done(function(response) {
-        $('#cabinPrice').val(response);      
-              
+        $('#cabinPrice').val(response.price);      
+        $('#cabinCapacity').val(response.capacity);       
     });
     
 });
 
 $('#quantity').on('change', function(e){
-   var price = $('#days').val()*$('#cabinPrice').val()*$(this).val(); 
+  var capacity =  $('#cabinCapacity').val(); 
+  var quantity = $(this).val();    
+    if(capacity < quantity){
+        alert("El número de personas supera la capacidad de la cabaña. Máximo "+capacity);
+        $('#quantity').val(capacity); 
+        quantity= capacity;
+    }
+   var price = $('#days').val()*$('#cabinPrice').val()*quantity; 
    $('#price').val(price); 
 });
 

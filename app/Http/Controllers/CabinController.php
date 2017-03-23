@@ -97,8 +97,8 @@ class CabinController extends Controller
      public function getPrice($id)
     {
       $cabin = Cabin::findOrFail($id);
-      $price = $cabin->price;    
-      return $price;
+        
+      return $cabin;
     }
 
 }

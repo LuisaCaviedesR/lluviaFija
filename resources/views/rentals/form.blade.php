@@ -1,6 +1,7 @@
                                     <div class="form-group">
                                          {!! Form::label('affiliate_id', 'Afiliados', ['class' => 'control-label']) !!}
                                         {{ Form::select('affiliate_id', $listAffiliates, null,  ['placeholder' => 'Buscar', 'class' => 'form-control search-select']) }}                             {{ Form::hidden('cabinPrice',null, array('id' => 'cabinPrice')) }}
+                                        {{ Form::hidden('cabinCapacity',null, array('id' => 'cabinCapacity')) }}
            
                                     </div> 
                                     <div class="form-group">
