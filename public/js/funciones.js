@@ -1,4 +1,24 @@
- $(document).ready(function() {
+var allowFilter = ['alquiler'];
+
+$.fn.dataTable.ext.search.push(
+    function( settings, data, dataIndex ) {
+         if ( $.inArray( settings.nTable.getAttribute('id'), allowFilter ) == -1 )
+         {
+            // ignora las tablas que no esten en la lista
+           
+             return true;
+        }
+        var dateStart = $('#dateStart').val();
+        var dateEnd = $('#dateEnd').val();
+        var fechaIngreso =  data[4]; // Usa datos de la columna fecha ingreso
+        if ((dateEnd=="" && dateStart=="") ||  ( dateStart=="" && fechaIngreso <= dateEnd ) || ( dateStart <= fechaIngreso   && dateEnd=="" ) || (dateStart <= fechaIngreso  && fechaIngreso <= dateEnd))
+        {
+            return true;
+        }
+        return false;
+    }
+); 
+$(document).ready(function() {
        
          $('#alquiler').DataTable({
                 responsive: true,
@@ -30,7 +50,9 @@
             });
      $('.input-daterange').datepicker();
  
-
+      $('#dateStart, #dateEnd').change( function() {
+        $("#alquiler").DataTable().draw();
+    } );
 });
 $(".search-select").select2({
   placeholder: "Buscar",
