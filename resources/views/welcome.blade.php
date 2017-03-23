@@ -24,7 +24,7 @@
     </head>-->
     <body>
 
-        @extends('layouts.home')
+        @extends('layouts.app')
 
         @section('content')
 
