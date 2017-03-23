@@ -13,25 +13,20 @@
 
 /*URL,Nombre de la funcion del controlador*/
 
-Route::get('/','loginController@login');
+Route::get('/', function () {
+    return view('welcome');
+});
 
-Route::get('lluviafija/crearAfiliado','AfiliadoController@crearAfiliado');
+Auth::routes();
 
-Route::get('lluviafija/editarAfiliado','AfiliadoController@editarAfiliado');
+Route::get('/home', 'HomeController@index');
 
-Route::get('lluviafija/listarAfiliados','AfiliadoController@listarAfiliados');
+Route::resource('users', 'UserController');
 
 Route::resource('cabins', 'CabinController');
-
-Route::get('lluviafija/crearUsuario','UsuariosController@crearUsuario');
-
-Route::get('lluviafija/listarUsuarios','UsuariosController@listarUsuarios');
-
-Route::get('lluviafija/perfilUsuario','UsuariosController@perfilUsuario');
 
 Route::resource('rentals', 'RentalController');
 
 Route::resource('affiliates', 'AffiliateController');
 
-route::get('cabinsPrice/{id}', 'CabinController@getPrice');
-
+Route::get('cabinsPrice/{id}', 'CabinController@getPrice');

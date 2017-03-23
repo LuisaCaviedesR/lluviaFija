@@ -1,4 +1,4 @@
-@extends ('layouts.app')
+@extends ('layouts.home')
 @section('content')
 <p></p>
         <div class="row">
@@ -8,7 +8,7 @@
                     <div class="row">
                         <div class="col-sm-9">Usuarios</div>
                         <div class="col-sm-3">
-                            <button type="button" class="btn btn-primary" onclick="location.href='{!! url('lluviafija/crearUsuario') !!}'">
+                            <button type="button" class="btn btn-primary" onclick="location.href='{!! url('users/create') !!}'">
                                 Registrar Usuario <i class="fa fa-plus-circle"></i>
                             </button>
                         </div>
@@ -26,15 +26,22 @@
                             <th width="12%">Acciones</th>
 				        </tr>
 	 		        </thead>
+                    @foreach($list as $user)
                     <tr>
                         <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td><a href=""><i class="fa fa-pencil fa-fw" title="Editar"></i></a>
-                            <a href="#" ><i class="fa fa-trash-o  fa-fw" title="Borrar"></i></a>
+                        <td>{{ $user->name }}</td>
+                        <td>{{ $user->lastname }}</td>
+                        <td>{{ $user->email }}</td>
+                        <td>
+                            <a href="{{ route('users.edit', $user->id) }}">
+                                <i class="fa fa-pencil fa-fw" title="Editar"></i>
+                            </a>
+                           {!! Form::open(['method' => 'DELETE','route' => ['users.destroy', $user->id],'style'=>'display: inline-block']) !!}
+                                {!! Form::button('<span class="fa fa-trash-o fa-fw"></span>',['class' => 'bigicon delete_button','type'=>'submit']) !!}
+                            {!! Form::close() !!}
                         </td>
                     </tr>
+                    @endforeach
 				    </table>
                     </div>
 			  </div>

@@ -7,26 +7,41 @@
             <span class="icon-bar"></span>
         </button>
         <a class="navbar-brand" href="#" id="logo"><i class="fa fa-cloud fa-fw"></i>LLuvia Fija</a>
-    </div>           
-    <ul class="nav navbar-top-links navbar-right">                            
+    </div>
+    <ul class="nav navbar-top-links navbar-right">
+    @if (Auth::guest())
+        <li><a href="{{ route('login') }}">Login</a></li>
+        <li><a href="{{ route('register') }}">Register</a></li>
+    @else
         <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                <i class="fa fa-user fa"></i> Bienvenido, Pepito Perez <i class="fa fa-caret-down"></i>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                <i class="fa fa-user fa"></i> Bienvenido, {{ Auth::user()->name }}<i class="fa fa-caret-down"></i>
             </a>
-            <ul class="dropdown-menu dropdown-user">
-                <li><a href="{!! url('lluviafija/perfilUsuario') !!}"><i class="fa fa-cog fa-fw"></i> Ajustes Usuario</a></li>                      
-                <li class="divider"></li>
-                <li><a href="{!! url('/') !!}"><i class="fa fa-sign-out fa-fw"></i>Cerrar Sesión</a></li>
-            </ul>                   
-        </li>              
+
+            <ul class="dropdown-menu dropdown-user" role="menu">
+                <li>
+                    <a href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                                 document.getElementById('logout-form').submit();">
+                        <i class="fa fa-sign-out fa-fw"></i>
+                        Logout
+                    </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        {{ csrf_field() }}
+                    </form>
+                </li>
+            </ul>
+        </li>
+    @endif
     </ul>
+
     <div class="navbar-default sidebar" role="navigation">
         <div class="sidebar-nav navbar-collapse">
             <ul class="nav" id="side-menu">                       
                 <li><a href="{!! url('affiliates') !!}"><i class="fa  fa-group fa-fw"></i> Afiliados</a></li>
                 <li><a href="{!! url('cabins') !!}"><i class="fa  fa-home fa-fw"></i> Cabañas</a></li>
                 <li><a href="{!! url('rentals') !!}"><i class="fa  fa-credit-card fa-fw"></i> Alquiler</a></li>
-                <li><a href="{!! url('lluviafija/listarUsuarios') !!}"><i class="fa fa-user fa-fw"></i> Usuarios</a></li>                 
+                <li><a href="{!! url('users') !!}"><i class="fa fa-user fa-fw"></i> Usuarios</a></li>
             </ul>
         </div>                
     </div>          
