@@ -19,14 +19,14 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::group(['middleware' => 'auth'],
+             function(){
+    Route::resource('cabins', 'CabinController');
+    Route::resource('rentals', 'RentalController');
+    Route::resource('affiliates', 'AffiliateController');
+    Route::resource('users', 'UserController');
+});
+
 Route::get('/home', 'HomeController@index');
-
-Route::resource('users', 'UserController');
-
-Route::resource('cabins', 'CabinController');
-
-Route::resource('rentals', 'RentalController');
-
-Route::resource('affiliates', 'AffiliateController');
 
 Route::get('cabinsPrice/{id}', 'CabinController@getPrice');
