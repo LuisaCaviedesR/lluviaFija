@@ -41,7 +41,9 @@
                 <li><a href="{!! url('affiliates') !!}"><i class="fa  fa-group fa-fw"></i> Afiliados</a></li>
                 <li><a href="{!! url('cabins') !!}"><i class="fa  fa-home fa-fw"></i> Cabañas</a></li>
                 <li><a href="{!! url('rentals') !!}"><i class="fa  fa-credit-card fa-fw"></i> Alquiler</a></li>
+                @if (Auth::user()->roles->name === 'Administrador')
                 <li><a href="{!! url('users') !!}"><i class="fa fa-user fa-fw"></i> Usuarios</a></li>
+                @endif
             </ul>
         </div>                
     </div>          
