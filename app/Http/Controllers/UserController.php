@@ -27,7 +27,7 @@ class UserController extends Controller
     public function store(Request $request){
         $input = $request->all();
         $this->validate($request, [ //validación para los campos
-            'name' => 'required | string | alpha_dash | max:66',
+            'name' => 'required | string | max:66',
             'lastname' => 'required | string | max:66',
             'email' => 'required | email| max:150 | unique:users',
             'password' => 'required | string | min:8 | max:64',
@@ -55,7 +55,7 @@ class UserController extends Controller
         try{
             $user = User::findOrFail($id);
             $this->validate($request, [
-                'name' => 'required | string | alpha_dash | max:66',
+                'name' => 'required | string| max:66',
                 'lastname' => 'required | string | max:66',
                 'email' => 'required |email | max:150 | unique:users,id,'.$id,
                 'password' => 'required | string | min:8 | max:64',
