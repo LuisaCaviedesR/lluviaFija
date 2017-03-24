@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Auth;
-
+use App\Role;
 use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
@@ -63,11 +63,14 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        //Enviar rol por defecto
+        $role= Role::where('name', '=' ,'Empleado')->firstOrFail();
         return User::create([
             'name' => $data['name'],
-            'lastname' => $data['name'],
+            'lastname' => $data['lastname'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
+            'rol_id' =>$role->id
         ]);
     }
 }
