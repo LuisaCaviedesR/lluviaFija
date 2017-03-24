@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'lastname', 'email', 'password',
+        'name', 'lastname', 'email', 'password','rol_id'
     ];
 
     /**
@@ -32,4 +32,9 @@ class User extends Authenticatable
 
         $this->attributes['password'] = Hash::make($plainPassword);//cifrar el password
     }
+    
+     public function roles()
+   {
+       return $this->belongsTo('App\Role','rol_id');
+   }
 }
