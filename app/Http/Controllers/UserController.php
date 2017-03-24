@@ -99,4 +99,15 @@ class UserController extends Controller
             return redirect()->back();
         }
     }
+
+    public function show(Request $request, $id){
+        try{
+            $user = User::findOrFail($id);
+            return view('users.show', ['data' => $user]);
+        }
+        catch(ModelNotFoundException $e){
+            Session::flash('flash_message', "El Usuario ($id) no fue encontrado!");
+            return redirect()->back();
+        }
+    }
 }

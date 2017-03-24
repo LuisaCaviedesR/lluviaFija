@@ -36,6 +36,11 @@
                             <a href="{{ route('users.edit', $user->id) }}">
                                 <i class="fa fa-pencil fa-fw" title="Editar"></i>
                             </a>
+
+                            <a href="{{ route('users.show', $user->id) }}">
+                                <i class="fa fa-file-text-o fa-fw"></i>
+                            </a>
+
                            {!! Form::open(['method' => 'DELETE','route' => ['users.destroy', $user->id],'style'=>'display: inline-block']) !!}
                                 {!! Form::button('<span class="fa fa-trash-o fa-fw"></span>',['class' => 'bigicon delete_button','type'=>'submit']) !!}
                             {!! Form::close() !!}
