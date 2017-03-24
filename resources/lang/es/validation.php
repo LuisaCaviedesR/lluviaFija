@@ -125,8 +125,13 @@ return [
         'phone'  => 'Teléfono',
         'lastname'  => 'Apellido',
         'email'  => 'Email',
-        'id_type_document'  => 'Tipo de identificación'
-
+        'id_type_document'  => 'Tipo de identificación',
+        'cabin_number' => 'Número de Cabaña',
+        'description' => 'Descripción',
+        'capacity' => 'Capacidad',
+        'price' => 'Precio',
+        'available' => 'Disponible',
+        'password' => 'Contraseña'
     ],
 
 ];

@@ -27,11 +27,11 @@ class UserController extends Controller
         $this->validate($request, [ //validación para los campos
             'name' => 'required | string | alpha_dash | max:66',
             'lastname' => 'required | string | max:66',
-            'email' => 'required | email|unique:users',
+            'email' => 'required | email| max:150 | unique:users',
             'password' => 'required | string | min:8 | max:64',
         ]);
         User::create($input);
-        Session::flash('flash_message','User successfully added!');
+        Session::flash('flash_message','El usuario ha sido registrado!');
         return redirect('/users');
     }
 
@@ -42,7 +42,7 @@ class UserController extends Controller
             return view('users.edit', ['data' => $user]);
         }
         catch(ModelNotFoundException $e){
-            Session::flash('flash_message', "The User could not be found to be edited!");
+            Session::flash('flash_message', "El usuario no ha podido ser encontrado para editar!");
             return redirect()->back();
         }
     }
@@ -54,16 +54,16 @@ class UserController extends Controller
             $this->validate($request, [
                 'name' => 'required | string | alpha_dash | max:66',
                 'lastname' => 'required | string | max:66',
-                'email' => 'required | email|unique:users',
+                'email' => 'required |email | max:150 | unique:users,id,'.$id,
                 'password' => 'required | string | min:8 | max:64',
             ]);
             $input = $request->all();
             $user->fill($input)->save();
-            Session::flash('flash_message', 'User successfully edited!');
+            Session::flash('flash_message', 'El usuario ha sido editado!');
             return redirect('/users');
         }
         catch(ModelNotFoundException $e){
-            Session::flash('flash_message', "The User could not be found to be edited!");
+            Session::flash('flash_message', "El usuario no ha podido ser encontrado para editar!");
             return redirect()->back();
         }
     }
@@ -73,11 +73,11 @@ class UserController extends Controller
         try{
              $user = User::findOrFail($id);
              $user->delete();
-             Session::flash('flash_message', 'User successfully deleted!');
+             Session::flash('flash_message', 'El usuario ha sido eliminado!');
              return redirect('/users');
          }
         catch(ModelNotFoundException $e){
-             Session::flash('flash_message', "The User could not be found to be deleted!");
+             Session::flash('flash_message', "El usuario no ha podido ser encontrado para eliminar!");
              return redirect()->back();
         }
      }

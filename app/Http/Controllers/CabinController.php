@@ -11,7 +11,7 @@ class CabinController extends Controller
 {
      public function index(){
         $cabins = Cabin::all();
-        return view('cabins.index', ['list' => $cabins]);/*Nombre de la vista*/
+        return view('cabins.index', ['list' => $cabins]);
     } 
     
     public function create(Request $request){
@@ -28,7 +28,7 @@ class CabinController extends Controller
             'available' => 'boolean',
         ]);
         Cabin::create($input);
-        Session::flash('flash_message','Cabin successfully added!');        
+        Session::flash('flash_message','La cabaña ha sido registrada!');
         return redirect('/cabins');
     }
 
@@ -37,11 +37,11 @@ class CabinController extends Controller
         try{
              $cabin = Cabin::findOrFail($id);
              $cabin->delete();
-             Session::flash('flash_message', "Cabin successfully deleted!");
+             Session::flash('flash_message', "La cabaña ha sido eliminada!");
              return redirect('/cabins');
          }
         catch(ModelNotFoundException $e){
-             Session::flash('flash_message', "The Cabin could not be found to be deleted!");
+             Session::flash('flash_message', "La cabaña no ha podido ser encontrada para eliminar!");
              return redirect()->back();
         }
     }
@@ -53,7 +53,7 @@ class CabinController extends Controller
             return view('cabins.edit', ['data' => $cabin]);
         }
         catch(ModelNotFoundException $e){
-            Session::flash('flash_message', "The User could not be found to be edited!");
+            Session::flash('flash_message', "La cabaña no ha podido ser encontrada para editar!");
             return redirect()->back();
         }
     }
@@ -71,11 +71,11 @@ class CabinController extends Controller
             ]);
             $input = $request->all();
             $cabin->fill($input)->save();
-            Session::flash('flash_message', 'Cabin successfully edited!');
+            Session::flash('flash_message', 'La cabaña ha sido editada!');
             return redirect('/cabins');
         }
         catch(ModelNotFoundException $e){
-            Session::flash('flash_message', "The Cabin could not be found to be edited!");
+            Session::flash('flash_message', "La cabaña no ha podido ser encontrada para editar!");
             return redirect()->back();
         }
     }
@@ -95,7 +95,7 @@ class CabinController extends Controller
             return view('cabins.show', ['data' => $cabin]);
         }
         catch(ModelNotFoundException $e){
-            Session::flash('flash_message', "La Cabaña ($id) no fue encontrado!");
+            Session::flash('flash_message', "La Cabaña ($id) no fue encontrada!");
             return redirect()->back();
         }
     }

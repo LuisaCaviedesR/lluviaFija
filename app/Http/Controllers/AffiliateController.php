@@ -32,7 +32,7 @@ class AffiliateController extends Controller
             'phone' => 'required | string| max:20',
         ]);
         Affiliate::create($input);
-        Session::flash('flash_message','EL Afiliado fue creado!');
+        Session::flash('flash_message','El Afiliado fue creado!');
         return redirect('/affiliates');
     }
 
@@ -43,7 +43,7 @@ class AffiliateController extends Controller
             return view('affiliates.edit', ['data' => $affiliate,'listDocumentsTypes' => $documentTypes]);
         }
         catch(ModelNotFoundException $e){
-            Session::flash('flash_message', "The Afiliado could not be found to be edited!");
+            Session::flash('flash_message', "El afiliado no ha podido ser encontrado para editar!");
             return redirect()->back();
         }
     }
@@ -62,11 +62,11 @@ class AffiliateController extends Controller
             ]);
             $input = $request->all();
             $affiliate->fill($input)->save();
-            Session::flash('flash_message', 'Afiliado se edito correctamente!');
+            Session::flash('flash_message', 'El afiliado ha sido editado!!');
             return redirect('/affiliates');
         }
         catch(ModelNotFoundException $e){
-            Session::flash('flash_message', "El Afiliado no se pudo encontrar para ser corregido!");
+            Session::flash('flash_message', "El afiliado no ha podido ser encontrado para editar!");
             return redirect()->back();
         }
     }
@@ -82,7 +82,7 @@ class AffiliateController extends Controller
          }
          catch(ModelNotFoundException $e)
          {
-            Session::flash('flash_message', "El Afiliado ($id) no fue encontrado para ser borrado!");
+            Session::flash('flash_message', "El afiliado no ha podido ser encontrado para editar!");
             return redirect()->back();
         }
     }
