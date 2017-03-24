@@ -125,8 +125,9 @@ return [
         'phone'  => 'Teléfono',
         'lastname'  => 'Apellido',
         'email'  => 'Email',
-        'id_type_document'  => 'Tipo de identificación'
-
+        'id_type_document'  => 'Tipo de identificación',
+        'rol_id'=>'Rol',
+        'password'=>'Contraseña'
     ],
 
 ];

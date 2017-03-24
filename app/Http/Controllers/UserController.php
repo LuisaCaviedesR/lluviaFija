@@ -33,7 +33,7 @@ class UserController extends Controller
             'password' => 'required | string | min:8 | max:64',
         ]);
         User::create($input);
-        Session::flash('flash_message','User successfully added!');
+        Session::flash('flash_message','El usuario fue agregado exitosamente!');
         return redirect('/users');
     }
 
@@ -45,7 +45,7 @@ class UserController extends Controller
             return view('users.edit', ['data' => $user,'listRol' => $listRol]);
         }
         catch(ModelNotFoundException $e){
-            Session::flash('flash_message', "The User could not be found to be edited!");
+            Session::flash('flash_message', "El usuario no pudo ser encontrado para ser editado!");
             return redirect()->back();
         }
     }
@@ -62,11 +62,11 @@ class UserController extends Controller
             ]);
             $input = $request->all();
             $user->fill($input)->save();
-            Session::flash('flash_message', 'User successfully edited!');
+            Session::flash('flash_message', 'El usuario fue editado de manera existosa!');
             return redirect('/users');
         }
         catch(ModelNotFoundException $e){
-            Session::flash('flash_message', "The User could not be found to be edited!");
+            Session::flash('flash_message', "El usuario no pudo ser encontrado para ser editado!");
             return redirect()->back();
         }
     }
@@ -76,11 +76,11 @@ class UserController extends Controller
         try{
              $user = User::findOrFail($id);
              $user->delete();
-             Session::flash('flash_message', 'User successfully deleted!');
+             Session::flash('flash_message', 'El usuario fue borrado de manera exitosa!');
              return redirect('/users');
          }
         catch(ModelNotFoundException $e){
-             Session::flash('flash_message', "The User could not be found to be deleted!");
+             Session::flash('flash_message', "El usuario no fue encontrado para ser eliminado!");
              return redirect()->back();
         }
      }
