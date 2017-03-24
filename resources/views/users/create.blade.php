@@ -17,19 +17,8 @@
                                 @endif
                                 {!! Form::open(['route' => 'users.store']) !!}
                                     <div class="form-group">
-                                       <!-- {!! Form::label('rol_id', 'Rol', ['class' => 'control-label']) !!}
-                                        {!! Form::text('rol_id', null, ['class' => 'form-control']) !!}
-
-                                         <label>Rol</label>
-                                        <div class="input-group">
-                                             <div class="input-group-addon">
-                                                <i class="glyphicon glyphicon-check bigicon"></i>
-                                            </div>
-                                        <select class="form-control" id="rol">
-                                            <option value="Admin">Administrador</option>
-                                            <option value="Consulta">Consulta</option>
-                                        </select>
-                                        </div>-->
+                                      {!! Form::label('rol_id', 'Rol', ['class' => 'control-label']) !!}
+                                      {{ Form::select('rol_id', $listRol, null, array('class' => 'form-control')) }}
                                     </div>
                                     <div class="form-group">
                                         {!! Form::label('name', 'Nombres', ['class' => 'control-label']) !!}

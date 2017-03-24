@@ -28,7 +28,7 @@
 	 		        </thead>
                     @foreach($list as $user)
                     <tr>
-                        <td></td>
+                        <td>{{ $user->roles->name }}</td>
                         <td>{{ $user->name }}</td>
                         <td>{{ $user->lastname }}</td>
                         <td>{{ $user->email }}</td>

@@ -21,6 +21,10 @@
                                     'route' => ['users.update', $data->id]
                                 ]) !!}
                                     <div class="form-group">
+                                      {!! Form::label('rol_id', 'Rol', ['class' => 'control-label']) !!}
+                                      {{ Form::select('rol_id', $listRol, null, array('class' => 'form-control')) }}
+                                    </div>
+                                    <div class="form-group">
                                         {!! Form::label('name', 'Nombres', ['class' => 'control-label']) !!}
                                         {!! Form::text('name', null, ['class' => 'form-control']) !!}
                                     </div>
