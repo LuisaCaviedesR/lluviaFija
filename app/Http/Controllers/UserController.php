@@ -19,34 +19,34 @@ class UserController extends Controller
 
      //Para crear un usuario (muestra el formulario para ingresar la información)
     public function create(Request $request){
-        $listRol = Role::pluck('name', 'id');
-        return view('users.create',['listRol' => $listRol]);
+        $listRol=Role::pluck('name','id');
+        return view('users.create',['listRol'=>$listRol]);
     }
 
     //Para almacenar los datos del nuevo usuario en la bd
     public function store(Request $request){
         $input = $request->all();
         $this->validate($request, [ //validación para los campos
-            'name' => 'required | string| max:66',
+            'name' => 'required | string | alpha_dash | max:66',
             'lastname' => 'required | string | max:66',
-            'email' => 'required | email|unique:users',
+            'email' => 'required | email| max:150 | unique:users',
             'password' => 'required | string | min:8 | max:64',
         ]);
         User::create($input);
-        Session::flash('flash_message','El usuario fue agregado exitosamente!');
+        Session::flash('flash_message','El usuario ha sido registrado!');
         return redirect('/users');
     }
 
     //Para editar un usuario (muestra el formulario con la información para editar)
     public function edit(Request $request, $id){
-        $listRol = Role::pluck('name', 'id');
+        $listRol=Role::pluck('name','id');
         try{
             $user = User::findOrFail($id);
-            return view('users.edit', ['data' => $user,'listRol' => $listRol]);
+            return view('users.edit', ['data' => $user,'listRol'=>$listRol]);
         }
         catch(ModelNotFoundException $e){
-            Session::flash('flash_message', "El usuario no pudo ser encontrado para ser editado!");
-            return redirect()->back();
+        Session::flash('flash_message', "El usuario no ha podido ser encontrado para editar!");
+        return redirect()->back();
         }
     }
 
@@ -55,18 +55,19 @@ class UserController extends Controller
         try{
             $user = User::findOrFail($id);
             $this->validate($request, [
-                'name' => 'required | string| max:66',
+                'name' => 'required | string | alpha_dash | max:66',
                 'lastname' => 'required | string | max:66',
-                'email' => 'required | email|unique:users,id'.$id,
+                'email' => 'required |email | max:150 | unique:users,id,'.$id,
                 'password' => 'required | string | min:8 | max:64',
             ]);
             $input = $request->all();
             $user->fill($input)->save();
-            Session::flash('flash_message', 'El usuario fue editado de manera existosa!');
+            Session::flash('flash_message', 'El usuario ha sido editado!');
             return redirect('/users');
         }
         catch(ModelNotFoundException $e){
-            Session::flash('flash_message', "El usuario no pudo ser encontrado para ser editado!");
+            Session::flash('flash_message', "El usuario no ha podido ser encontrado para editar!");
+
             return redirect()->back();
         }
     }
@@ -76,11 +77,13 @@ class UserController extends Controller
         try{
              $user = User::findOrFail($id);
              $user->delete();
-             Session::flash('flash_message', 'El usuario fue borrado de manera exitosa!');
+
+             Session::flash('flash_message', 'El usuario ha sido eliminado!');
              return redirect('/users');
          }
         catch(ModelNotFoundException $e){
-             Session::flash('flash_message', "El usuario no fue encontrado para ser eliminado!");
+             Session::flash('flash_message', "El usuario no ha podido ser encontrado para eliminar!");
+
              return redirect()->back();
         }
      }

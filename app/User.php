@@ -32,7 +32,7 @@ class User extends Authenticatable
 
         $this->attributes['password'] = Hash::make($plainPassword);//cifrar el password
     }
-    
+
      public function roles()
    {
        return $this->belongsTo('App\Role','rol_id');

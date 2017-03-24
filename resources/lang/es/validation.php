@@ -127,7 +127,12 @@ return [
         'email'  => 'Email',
         'id_type_document'  => 'Tipo de identificación',
         'rol_id'=>'Rol',
-        'password'=>'Contraseña'
+        'cabin_number' => 'Número de Cabaña',
+        'description' => 'Descripción',
+        'capacity' => 'Capacidad',
+        'price' => 'Precio',
+        'available' => 'Disponible',
+        'password' => 'Contraseña'
     ],
 
 ];
