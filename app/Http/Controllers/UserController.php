@@ -87,4 +87,16 @@ class UserController extends Controller
              return redirect()->back();
         }
      }
+
+    //Para editar un usuario (muestra el formulario con la información para editar)
+    public function userProfile(Request $request, $id){
+        try{
+            $user = User::findOrFail($id);
+            return view('users.userprofile', ['data' => $user]);
+        }
+        catch(ModelNotFoundException $e){
+            Session::flash('flash_message', "El usuario no ha podido ser encontrado para editar!");
+            return redirect()->back();
+        }
+    }
 }
