@@ -42,14 +42,14 @@
                              <a href="{{ route('affiliates.show', $affiliate->id) }}">
                                 <i class="fa fa-file-text-o fa-fw"></i>
                             </a>
-
+                             @if (Auth::user()->roles->name === 'Administrador')
                             <!-------------------------- borrar ------------------------->
                              {!! Form::open(['method' => 'DELETE','route' => ['affiliates.destroy', $affiliate->id],'style'=>'display: inline-block']) !!}
 
                                 {!! Form::button('<span class="fa fa-trash-o fa-fw"></span>',['class'=>'bigicon delete_button','type'=>'submit']) !!}
 
                             {!! Form::close() !!}
-                           <!-- <a href="#" ><i class="fa fa-trash-o  fa-fw" title="Borrar"></i></a>-->
+                            @endif
 
                             <!---------------------------- fin de borar --------------------->
                         </td>
