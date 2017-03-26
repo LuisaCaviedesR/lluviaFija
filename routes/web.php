@@ -25,6 +25,7 @@ Route::group(['middleware' => 'auth'],
     Route::resource('rentals', 'RentalController');
     Route::resource('affiliates', 'AffiliateController');
     Route::resource('users', 'UserController');
+    Route::get('userprofile/{id}','UserController@userProfile');
 });
 
 Route::get('/home', 'HomeController@index');

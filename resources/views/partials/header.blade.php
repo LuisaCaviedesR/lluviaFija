@@ -19,7 +19,7 @@
             </a>
 
             <ul class="dropdown-menu dropdown-user" role="menu">
-                <li><a href="{{ route('users.edit', Auth::user()->id) }}"><i class="fa fa-cog fa-fw"></i> Ajustes Usuario</a></li>
+                <li><a href="{{ url('userprofile', Auth::user()->id) }}"><i class="fa fa-cog fa-fw"></i> Ajustes Usuario</a></li>
                 <li class="divider"></li>
                 <li>
                     <a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
