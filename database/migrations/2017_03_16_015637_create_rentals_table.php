@@ -24,13 +24,7 @@ class CreateRentalsTable extends Migration
             $table->date('datein');
             $table->date('dateout');
             $table->timestamps();
-            $table->foreign('cabin_id')->references('id')->on('cabins')
-                   ->onUpdate('cascade')
-                   ->onDelete('cascade');
-           $table->foreign('affiliate_id')->references('id')->on('affiliates')
-                   ->onUpdate('cascade')
-                   ->onDelete('cascade');
-           
+          
         });
     }
 

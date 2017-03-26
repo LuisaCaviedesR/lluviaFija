@@ -23,9 +23,7 @@ class CreateAffiliatesTable extends Migration
             $table->string('email')->unique();
             $table->string('phone');
             $table->timestamps();
-            $table->foreign('id_type_document')->references('id')->on('document_types')
-                   ->onUpdate('cascade')
-                   ->onDelete('cascade'); 
+           
       });
     }
 
